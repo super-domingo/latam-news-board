@@ -51,8 +51,10 @@ a:hover { text-decoration: underline; }
   padding: 5px 12px; font: inherit; font-size: 13px; cursor: pointer;
 }
 .chip.on { background: var(--brand); border-color: var(--brand); color: #fff; font-weight: 700; }
-.legend { display: flex; gap: 14px; font-size: 13px; color: var(--muted); }
-.dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
+.legend { display: flex; align-items: center; gap: 14px; font-size: 13px; line-height: 1; color: var(--muted); }
+/* 점과 글자를 한 줄 가운데로 맞춘다(글꼴마다 기준선이 달라 삐뚤어지지 않게) */
+.legend span { display: inline-flex; align-items: center; gap: 5px; height: 20px; }
+.dot { display: inline-block; flex: none; width: 10px; height: 10px; border-radius: 50%; }
 .dot.high { background: var(--high); }
 .dot.medium { background: var(--medium); }
 .dot.low { background: var(--low); }
