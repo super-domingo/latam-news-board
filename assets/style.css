@@ -5,7 +5,7 @@
   --line: #24324c;
   --text: #e6ebf2;
   --muted: #8a97ab;
-  --ocean: #0b1220;
+  --ocean: #24507e;
   --land: #1a2537;
   --land-target: #233350;
   --border: #3a4d6b;
@@ -75,10 +75,10 @@ a:hover { text-decoration: underline; }
 /* 지도 위 순환 뉴스 카드 */
 .leaflet-container { font-family: inherit; }
 .news-card {
-  position: absolute; z-index: 600; width: 300px;
+  position: absolute; z-index: 600; width: 240px;
   background: rgba(17, 26, 44, 0.96);
   border: 1px solid var(--line); border-left: 5px solid var(--low);
-  border-radius: 10px; padding: 12px 14px;
+  border-radius: 9px; padding: 9px 11px;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
   cursor: pointer; transition: opacity 0.4s ease, transform 0.4s ease;
 }
@@ -86,10 +86,10 @@ a:hover { text-decoration: underline; }
 .news-card.medium { border-left-color: var(--medium); }
 .news-card.leaving { opacity: 0; transform: translateY(6px); }
 .news-card .pop-anim { animation: fadeIn 0.5s ease; }
-.pop-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 6px; }
+.pop-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 4px; }
 .pop-country { font-weight: 800; font-size: 14px; }
 .pop-date { color: var(--muted); font-size: 12px; white-space: nowrap; }
-.pop-title { font-weight: 700; font-size: 15px; line-height: 1.4; margin-bottom: 6px; }
+.pop-title { font-weight: 700; font-size: 14px; line-height: 1.4; margin-bottom: 6px; }
 .pop-summary { color: #c4cddb; font-size: 13px; line-height: 1.5; margin-bottom: 8px; }
 .pop-foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 12px; }
 .cat {
@@ -134,6 +134,16 @@ a:hover { text-decoration: underline; }
 }
 .map-stats b { font-size: 18px; display: block; }
 
+.leaders { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 595; pointer-events: none; }
+.leader { stroke: rgba(230, 235, 242, 0.55); stroke-width: 1.2; stroke-dasharray: 3 3; }
+.leaders .hidden { display: none; }
+.night-canvas { position: absolute; left: 0; top: 0; image-rendering: auto; pointer-events: none; }
+.sun-icon span {
+  display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+  font-size: 26px; color: #ffd76a;
+  background: radial-gradient(circle, rgba(255, 215, 106, 0.55) 0%, rgba(255, 215, 106, 0) 70%);
+}
+
 /* 국가 상세 서랍 */
 .drawer {
   position: absolute; top: 0; right: 0; bottom: 0; width: min(420px, 90%);
@@ -167,10 +177,6 @@ a:hover { text-decoration: underline; }
 .fx-item span { display: block; font-size: 11px; }
 .fx-item b { font-size: 17px; }
 .fx-note { grid-column: 1 / -1; font-size: 11px; }
-.indicators { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 0 16px 10px; }
-.ind { color: var(--text); text-decoration: none; background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; font-size: 12px; }
-.ind b { display: block; font-size: 15px; color: var(--text); }
-.ind small { color: var(--muted); font-size: 10px; }
 .tabs { display: flex; border-bottom: 1px solid var(--line); padding: 0 8px; }
 .tab { flex: 1; background: none; border: none; color: var(--muted); font: inherit; padding: 9px; cursor: pointer; border-bottom: 2px solid transparent; }
 .tab.on { color: var(--text); font-weight: 800; border-bottom-color: var(--py); }
@@ -184,6 +190,6 @@ a:hover { text-decoration: underline; }
   .map-area { flex: none; height: 62vh; }
   .py-panel { flex: none; border-left: none; border-top: 1px solid var(--line); }
   .py-panel .news-list { max-height: 70vh; }
-  .news-card { width: 240px; }
+  .news-card { width: 200px; }
   .map-stats { display: none; }
 }

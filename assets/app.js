@@ -3,16 +3,16 @@
   'use strict';
 
   // 대상 20개국: ISO2 → { iso3, 한국어명, 표시 좌표, 카드 방향 }
-  // side: 'w'는 카드를 지점 왼쪽(태평양 쪽), 'e'는 오른쪽(대서양 쪽)에 띄운다
+  // side: 'w'는 카드를 지점 왼쪽(태평양 쪽), 'e'는 오른쪽(대서양 쪽)에 먼저 놓아 본다
   var COUNTRIES = {
     MX: { iso3: 'MEX', ko: '멕시코', at: [23.6, -102.5], side: 'w' },
     GT: { iso3: 'GTM', ko: '과테말라', at: [15.4, -91.6], side: 'w' },
-    BZ: { iso3: 'BLZ', ko: '벨리즈', at: [18.6, -87.2], side: 'w' },
-    HN: { iso3: 'HND', ko: '온두라스', at: [16.4, -84.6], side: 'w' },
+    BZ: { iso3: 'BLZ', ko: '벨리즈', at: [18.6, -87.2], side: 'e' },
+    HN: { iso3: 'HND', ko: '온두라스', at: [16.4, -84.6], side: 'e' },
     SV: { iso3: 'SLV', ko: '엘살바도르', at: [12.4, -90.2], side: 'w' },
-    NI: { iso3: 'NIC', ko: '니카라과', at: [13.2, -83.0], side: 'w' },
+    NI: { iso3: 'NIC', ko: '니카라과', at: [13.2, -83.0], side: 'e' },
     CR: { iso3: 'CRI', ko: '코스타리카', at: [9.2, -85.9], side: 'w' },
-    PA: { iso3: 'PAN', ko: '파나마', at: [9.6, -79.0], side: 'w' },
+    PA: { iso3: 'PAN', ko: '파나마', at: [9.6, -79.0], side: 'e' },
     CO: { iso3: 'COL', ko: '콜롬비아', at: [4.0, -73.0], side: 'w' },
     VE: { iso3: 'VEN', ko: '베네수엘라', at: [7.0, -66.0], side: 'e' },
     GY: { iso3: 'GUY', ko: '가이아나', at: [5.0, -58.9], side: 'e' },
@@ -32,11 +32,14 @@
   var IMP_RANK = { high: 3, medium: 2, low: 1 };
   var IMP_KO = { high: '즉시 확인', medium: '주의', low: '참고' };
   var WEEKDAY = ['일', '월', '화', '수', '목', '금', '토'];
-  var ROTATE_MS = 9000;          // 카드 한 장이 머무는 시간
+  var ROTATE_MS = 18000;          // 카드 한 장이 머무는 시간
+  var CARDS_WIDE = 6;             // 넓은 화면에 동시에 띄우는 카드 수
+  var CARDS_NARROW = 2;
   var RELOAD_MS = 30 * 60 * 1000; // 데이터 다시 읽는 주기
+  var SUN_MS = 60 * 1000;         // 낮·밤 경계 다시 그리는 주기
 
   var state = { news: [], py: null, cat: 'all', geo: null };
-  var map, geoLayer, badgeLayer;
+  var map, geoLayer, badgeLayer, nightCanvas, sunMarker;
 
   // ---------- 공통 ----------
   function esc(s) {
@@ -76,14 +79,14 @@
     });
     return best;
   }
-  function newsItemHtml(n, showCountry) {
+  // withSummary: 국가 상세 서랍에서만 요약을 보여준다
+  function newsItemHtml(n, withSummary) {
     var imp = IMP_RANK[n.importance] ? n.importance : 'low';
-    var who = showCountry && COUNTRIES[n.country] ? COUNTRIES[n.country].ko + ' · ' : '';
     return '<li class="news-item ' + imp + '">' +
-      '<div class="row1"><span>' + esc(who) + esc(fmtDate(n.date)) + '</span>' +
+      '<div class="row1"><span>' + esc(fmtDate(n.date)) + '</span>' +
       '<span><span class="cat">' + esc(n.category || n.agency || '') + '</span> ' + esc(IMP_KO[imp]) + '</span></div>' +
       '<div class="title">' + esc(n.title_ko) + '</div>' +
-      (n.summary_ko ? '<div class="summary">' + esc(n.summary_ko) + '</div>' : '') +
+      (withSummary && n.summary_ko ? '<div class="summary">' + esc(n.summary_ko) + '</div>' : '') +
       '<div class="src"><a href="' + esc(safeUrl(n.url)) + '" target="_blank" rel="noopener">' +
       esc(n.source || n.agency || '원문') + ' 원문 보기 ↗</a></div></li>';
   }
@@ -92,26 +95,29 @@
   function initMap() {
     map = L.map('map', {
       zoomControl: true, attributionControl: false, zoomSnap: 0.25,
-      minZoom: 2, maxZoom: 7, worldCopyJump: false
+      minZoom: 2, maxZoom: 7
     });
+    map.createPane('night').style.zIndex = 450;   // 나라 경계(400) 위, 배지(600) 아래
+    map.getPane('night').style.pointerEvents = 'none';
     fitView();
-    window.addEventListener('resize', function () { fitView(); placeCards(); });
-    map.on('move zoom', placeCards);
+    window.addEventListener('resize', function () { fitView(); drawNight(); placeAll(); });
+    map.on('move zoom', function () { drawNight(); placeAll(); });
   }
   function fitView() {
-    map.fitBounds([[32.5, -118], [-56, -34]], { padding: [10, 10] });
+    // 미국과 아르헨티나 남부는 잘라내고 멕시코~부에노스아이레스 아래까지 크게 보여준다
+    map.fitBounds([[31.5, -106], [-41, -40]], { padding: [0, 0] });
   }
   function countryStyle(feature) {
     var c2 = ISO3_TO_2[feature.id];
-    if (!c2) return { color: '#26344c', weight: 0.6, fillColor: '#141d2c', fillOpacity: 1 };
+    if (!c2) return { color: '#4a5d7a', weight: 0.6, fillColor: '#2b3546', fillOpacity: 1 };
     var imp = maxImp(filtered().filter(function (n) { return n.country === c2; }));
-    var fill = '#233350';
-    if (imp === 'high') fill = '#3d2633';
-    else if (imp === 'medium') fill = '#3a3230';
+    var fill = '#36507a';
+    if (imp === 'high') fill = '#6a3a4c';
+    else if (imp === 'medium') fill = '#62513f';
     var isPy = c2 === 'PY';
     return {
-      color: isPy ? '#3ccf91' : '#3a4d6b',
-      weight: isPy ? 2.2 : 0.9,
+      color: isPy ? '#3ccf91' : '#6f86a8',
+      weight: isPy ? 2.4 : 0.9,
       fillColor: fill,
       fillOpacity: 1
     };
@@ -157,20 +163,80 @@
       '<div><span class="muted">주의</span><b style="color:var(--medium)">' + med + '</b></div>';
   }
 
+  // ---------- 낮·밤 (실시간 해 위치) ----------
+  var RAD = Math.PI / 180;
+  // 태양 적위와 태양 바로 아래 지점의 경도 (천문 연감 근사식, 오차 1° 이내)
+  function sunPosition(date) {
+    var d = date.getTime() / 86400000 - 10957.5;           // J2000.0 기준 일수
+    var g = (357.529 + 0.98560028 * d) * RAD;
+    var q = 280.459 + 0.98564736 * d;
+    var lam = (q + 1.915 * Math.sin(g) + 0.020 * Math.sin(2 * g)) * RAD;
+    var eps = (23.439 - 0.00000036 * d) * RAD;
+    var ra = Math.atan2(Math.cos(eps) * Math.sin(lam), Math.cos(lam)) / RAD;
+    var dec = Math.asin(Math.sin(eps) * Math.sin(lam)) / RAD;
+    var gmst = (18.697374558 + 24.06570982441908 * d) % 24;
+    var lon = ((ra - gmst * 15) % 360 + 540) % 360 - 180;
+    return { dec: dec, lon: lon };
+  }
+  // 해가 떠 있는 곳은 그대로(밝게), 진 곳은 어둡게 덮는다. 박명(고도 0~-12°)은 점점 어둡게
+  function drawNight() {
+    if (!map) return;
+    var size = map.getSize();
+    if (!nightCanvas) {
+      nightCanvas = L.DomUtil.create('canvas', 'night-canvas', map.getPane('night'));
+    }
+    var step = 4;
+    var w = Math.ceil(size.x / step), h = Math.ceil(size.y / step);
+    nightCanvas.width = w;
+    nightCanvas.height = h;
+    nightCanvas.style.width = size.x + 'px';
+    nightCanvas.style.height = size.y + 'px';
+    L.DomUtil.setPosition(nightCanvas, map.containerPointToLayerPoint([0, 0]));
+
+    var sun = sunPosition(new Date());
+    var sinDec = Math.sin(sun.dec * RAD), cosDec = Math.cos(sun.dec * RAD);
+    var lons = new Float32Array(w), lats = new Float32Array(h);
+    for (var x = 0; x < w; x++) lons[x] = map.containerPointToLatLng([x * step, 0]).lng;
+    for (var y = 0; y < h; y++) lats[y] = map.containerPointToLatLng([0, y * step]).lat;
+
+    var ctx = nightCanvas.getContext('2d');
+    var img = ctx.createImageData(w, h);
+    var px = img.data, MAX = 0.62;
+    for (y = 0; y < h; y++) {
+      var la = lats[y] * RAD, a = Math.sin(la) * sinDec, b = Math.cos(la) * cosDec;
+      for (x = 0; x < w; x++) {
+        var el = Math.asin(a + b * Math.cos((lons[x] - sun.lon) * RAD)) / RAD;
+        var t = el >= 0 ? 0 : el <= -12 ? 1 : -el / 12;
+        var i = (y * w + x) * 4;
+        px[i] = 2; px[i + 1] = 6; px[i + 2] = 18; px[i + 3] = Math.round(t * MAX * 255);
+      }
+    }
+    ctx.putImageData(img, 0, 0);
+
+    var at = [sun.dec, sun.lon];
+    if (!sunMarker) {
+      sunMarker = L.marker(at, {
+        icon: L.divIcon({ className: 'sun-icon', html: '<span>☀</span>', iconSize: [40, 40], iconAnchor: [20, 20] }),
+        interactive: false, keyboard: false
+      }).addTo(map);
+    } else {
+      sunMarker.setLatLng(at);
+    }
+  }
+
   // ---------- 순환 카드 ----------
-  // 화면이 넓으면 두 장(서쪽·동쪽)을 번갈아, 좁으면 한 장만 돌린다
+  // 카드 여러 장을 시차를 두고 하나씩 바꾼다. 같은 나라 카드가 동시에 두 장 뜨지 않게 한다
   var slots = [];
+  var queue = [], qi = 0;
   var paused = false;
 
-  function buildQueue(side) {
-    var items = filtered().filter(function (n) {
-      return !side || COUNTRIES[n.country].side === side;
-    }).sort(byDateDesc);
-    // 나라별 최신 3건까지, 빨강은 한 번 더 넣어 자주 보이게 한다
+  function buildQueue() {
+    var items = filtered().sort(byDateDesc);
+    // 나라별 최신 4건까지, 빨강은 한 번 더 넣어 자주 보이게 한다
     var perCountry = {}, q = [];
     items.forEach(function (n) {
       perCountry[n.country] = (perCountry[n.country] || 0) + 1;
-      if (perCountry[n.country] <= 3) q.push(n);
+      if (perCountry[n.country] <= 4) q.push(n);
     });
     q.slice().forEach(function (n) { if (n.importance === 'high') q.push(n); });
     // 같은 나라가 연달아 나오지 않도록 섞는다
@@ -185,35 +251,61 @@
     }
     return out;
   }
-  function makeSlot(side, delay) {
+  function nextItem(slot) {
+    if (qi >= queue.length) { queue = buildQueue(); qi = 0; }
+    if (!queue.length) return null;
+    var shown = {};
+    slots.forEach(function (s) { if (s !== slot && s.cur) shown[s.cur.country] = true; });
+    for (var k = 0; k < queue.length; k++) {
+      var n = queue[(qi + k) % queue.length];
+      if (!shown[n.country]) {
+        // 고른 항목을 현재 위치로 당겨 와 순서를 유지한다
+        var j = (qi + k) % queue.length;
+        queue.splice(j, 1);
+        queue.splice(qi, 0, n);
+        qi++;
+        return n;
+      }
+    }
+    return queue[qi++];
+  }
+  function makeSlot(delay) {
+    var area = document.querySelector('.map-area');
     var el = document.createElement('div');
     el.className = 'news-card hidden';
     var ring = document.createElement('div');
     ring.className = 'focus-ring hidden';
-    var area = document.querySelector('.map-area');
+    var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line.setAttribute('class', 'leader hidden');
+    document.getElementById('leaders').appendChild(line);
     area.appendChild(ring);
     area.appendChild(el);
-    var slot = { side: side, el: el, ring: ring, queue: [], i: 0, cur: null, timer: null };
+    var slot = { el: el, ring: ring, line: line, cur: null, rect: null };
     el.addEventListener('mouseenter', function () { paused = true; });
     el.addEventListener('mouseleave', function () { paused = false; });
     el.addEventListener('click', function (e) {
       if (e.target.closest('a') || !slot.cur) return;
       slot.cur.country === 'PY' ? focusPy() : openDrawer(slot.cur.country);
     });
-    setTimeout(function () { advance(slot); slot.timer = setInterval(function () { advance(slot); }, ROTATE_MS); }, delay);
+    setTimeout(function () {
+      advance(slot);
+      setInterval(function () { advance(slot); }, ROTATE_MS);
+    }, delay);
     return slot;
+  }
+  function setVisible(slot, on) {
+    [slot.el, slot.ring, slot.line].forEach(function (x) { x.classList.toggle('hidden', !on); });
   }
   function advance(slot) {
     if (paused || document.getElementById('drawer').classList.contains('open')) return;
-    if (!slot.queue.length || slot.i >= slot.queue.length) { slot.queue = buildQueue(slot.side); slot.i = 0; }
-    if (!slot.queue.length) { slot.el.classList.add('hidden'); slot.ring.classList.add('hidden'); slot.cur = null; return; }
-    var n = slot.queue[slot.i++];
+    var n = nextItem(slot);
+    if (!n) { slot.cur = null; slot.rect = null; setVisible(slot, false); return; }
     slot.el.classList.add('leaving');
     setTimeout(function () {
       slot.cur = n;
       renderCard(slot, n);
-      slot.el.classList.remove('hidden', 'leaving');
-      slot.ring.classList.remove('hidden');
+      slot.el.classList.remove('leaving');
+      setVisible(slot, true);
       placeCard(slot);
     }, 350);
   }
@@ -224,33 +316,72 @@
       '<div class="pop-head"><span class="pop-country">' + esc(COUNTRIES[n.country].ko) + '</span>' +
       '<span class="pop-date">' + esc(fmtDate(n.date)) + '</span></div>' +
       '<div class="pop-title">' + esc(n.title_ko) + '</div>' +
-      '<div class="pop-summary">' + esc(n.summary_ko) + '</div>' +
-      '<div class="pop-foot"><span><span class="cat">' + esc(n.category) + '</span> ' +
-      '<span style="color:var(--' + imp + ')">● ' + esc(IMP_KO[imp]) + '</span></span>' +
+      '<div class="pop-foot"><span class="cat">' + esc(n.category) + '</span>' +
       '<a href="' + esc(safeUrl(n.url)) + '" target="_blank" rel="noopener">' + esc(n.source || '원문') + ' ↗</a></div></div>';
   }
+  function overlaps(r, others) {
+    for (var i = 0; i < others.length; i++) {
+      var o = others[i];
+      if (r.l < o.r + 6 && r.r + 6 > o.l && r.t < o.b + 6 && r.b + 6 > o.t) return true;
+    }
+    return false;
+  }
+  // 선호 방향 → 반대 방향 → 위아래로 비켜 가며 다른 카드와 겹치지 않는 자리를 찾는다
   function placeCard(slot) {
     if (!slot.cur) return;
     var c = COUNTRIES[slot.cur.country];
     var p = map.latLngToContainerPoint(c.at);
     var area = document.querySelector('.map-area');
     var W = area.clientWidth, H = area.clientHeight;
-    var w = slot.el.offsetWidth, h = slot.el.offsetHeight, gap = 26;
-    var left = c.side === 'w' ? p.x - gap - w : p.x + gap;
-    if (left < 8) left = p.x + gap;
-    if (left + w > W - 8) left = Math.max(8, p.x - gap - w);
-    var top = Math.min(Math.max(p.y - h / 2, 8), H - h - 8);
-    slot.el.style.left = left + 'px';
-    slot.el.style.top = top + 'px';
+    var w = slot.el.offsetWidth, h = slot.el.offsetHeight, gap = 40;
+    var others = slots.filter(function (s) { return s !== slot && s.rect && s.cur; })
+      .map(function (s) { return s.rect; });
+    others.push({ l: 0, r: 230, t: H - 80, b: H });  // 왼쪽 아래 통계 상자
+    others.push({ l: 0, r: 50, t: 0, b: 90 });       // 확대·축소 단추
+    Object.keys(COUNTRIES).forEach(function (k2) {   // 나라 배지·이름은 가리지 않는다
+      var b = map.latLngToContainerPoint(COUNTRIES[k2].at);
+      others.push({ l: b.x - 32, r: b.x + 32, t: b.y - 12, b: b.y + 28 });
+    });
+    var sides = c.side === 'w' ? ['w', 'e'] : ['e', 'w'];
+    var gaps = [gap, gap + 70, gap + 150];
+    var best = null;
+    for (var g = 0; g < gaps.length && !best; g++) {
+      for (var k = 0; k < 9 && !best; k++) {
+        var dy = (k % 2 ? 1 : -1) * Math.ceil(k / 2) * (h + 10);
+        for (var s = 0; s < 2; s++) {
+          var left = sides[s] === 'w' ? p.x - gaps[g] - w : p.x + gaps[g];
+          if (left < 8 || left + w > W - 8) continue;
+          var top = Math.min(Math.max(p.y - h / 2 + dy, 8), H - h - 8);
+          var r = { l: left, r: left + w, t: top, b: top + h };
+          if (!overlaps(r, others)) { best = r; break; }
+        }
+      }
+    }
+    if (!best) {
+      var l0 = Math.min(Math.max(c.side === 'w' ? p.x - gap - w : p.x + gap, 8), W - w - 8);
+      var t0 = Math.min(Math.max(p.y - h / 2, 8), H - h - 8);
+      best = { l: l0, r: l0 + w, t: t0, b: t0 + h };
+    }
+    slot.rect = best;
+    slot.el.style.left = best.l + 'px';
+    slot.el.style.top = best.t + 'px';
     slot.ring.style.left = p.x + 'px';
     slot.ring.style.top = p.y + 'px';
+    var ex = best.l > p.x ? best.l : best.r;
+    var ey = Math.min(Math.max(p.y, best.t + 12), best.b - 12);
+    slot.line.setAttribute('x1', p.x); slot.line.setAttribute('y1', p.y);
+    slot.line.setAttribute('x2', ex); slot.line.setAttribute('y2', ey);
   }
-  function placeCards() { slots.forEach(placeCard); }
+  function placeAll() {
+    slots.forEach(function (s) { s.rect = null; });
+    slots.forEach(placeCard);
+  }
   function startRotation() {
     var narrow = window.matchMedia('(max-width: 900px)').matches;
-    slots = narrow ? [makeSlot(null, 300)] : [makeSlot('w', 300), makeSlot('e', 300 + ROTATE_MS / 2)];
+    var count = narrow ? CARDS_NARROW : CARDS_WIDE;
+    for (var i = 0; i < count; i++) slots.push(makeSlot(300 + i * (ROTATE_MS / count)));
   }
-  function resetQueues() { slots.forEach(function (s) { s.queue = []; s.i = 0; }); }
+  function resetQueue() { queue = []; qi = 0; }
 
   // ---------- 국가 상세 서랍 ----------
   function openDrawer(c2) {
@@ -259,18 +390,18 @@
     document.getElementById('drawerSub').textContent =
       '최근 7일 ' + items.length + '건' + (state.cat === 'all' ? '' : ' · ' + state.cat);
     document.getElementById('drawerList').innerHTML = items.length
-      ? items.map(function (n) { return newsItemHtml(n, false); }).join('')
+      ? items.map(function (n) { return newsItemHtml(n, true); }).join('')
       : '<li class="empty">최근 7일간 수집된 뉴스가 없습니다.</li>';
     var d = document.getElementById('drawer');
     d.classList.add('open');
     d.setAttribute('aria-hidden', 'false');
-    slots.forEach(function (s) { s.el.classList.add('hidden'); s.ring.classList.add('hidden'); });
+    slots.forEach(function (s) { setVisible(s, false); });
   }
   function closeDrawer() {
     var d = document.getElementById('drawer');
     d.classList.remove('open');
     d.setAttribute('aria-hidden', 'true');
-    slots.forEach(function (s) { if (s.cur) { s.el.classList.remove('hidden'); s.ring.classList.remove('hidden'); } });
+    slots.forEach(function (s) { if (s.cur) setVisible(s, true); });
   }
 
   // ---------- 파라과이 패널 ----------
@@ -285,16 +416,10 @@
     document.getElementById('pyNews').innerHTML = news.length
       ? news.map(function (n) { return newsItemHtml(n, false); }).join('')
       : '<li class="empty">최근 7일간 수집된 뉴스가 없습니다.</li>';
-    var py = state.py || {};
-    var reg = (py.regulatory || []).slice().sort(byDateDesc);
+    var reg = ((state.py || {}).regulatory || []).slice().sort(byDateDesc);
     document.getElementById('pyReg').innerHTML = reg.length
       ? reg.map(function (n) { return newsItemHtml(n, false); }).join('')
       : '<li class="empty">수집된 보건·규제 동향이 없습니다.</li>';
-    document.getElementById('indicators').innerHTML = (py.indicators || []).map(function (x) {
-      return '<a class="ind" href="' + esc(safeUrl(x.url)) + '" target="_blank" rel="noopener">' +
-        '<span class="muted">' + esc(x.name_ko) + '</span><b>' + esc(x.value) + '</b>' +
-        '<small>' + esc(x.source) + ' · ' + esc(x.as_of) + '</small></a>';
-    }).join('');
   }
   function loadFx() {
     fetch('https://open.er-api.com/v6/latest/USD')
@@ -328,7 +453,7 @@
     drawBadges();
     drawStats();
     renderPy();
-    resetQueues();
+    resetQueue();
   }
 
   // ---------- 이벤트 ----------
@@ -358,6 +483,8 @@
   // ---------- 시작 ----------
   initMap();
   bindUi();
+  drawNight();
+  setInterval(drawNight, SUN_MS);
   fetch('assets/latam.geo.json').then(function (r) { return r.json(); }).then(function (geo) {
     state.geo = geo;
     return loadData();

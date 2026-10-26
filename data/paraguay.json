@@ -49,49 +49,5 @@
    "importance": "medium",
    "url": "https://dinavisa.gov.py/resoluciones/"
   }
- ],
- "indicators": [
-  {
-   "name_ko": "기준금리",
-   "value": "5.50%",
-   "as_of": "2026-10",
-   "source": "BCP",
-   "url": "https://www.lanacion.com.py/negocios/2026/10/25/el-bcp-mantiene-congelada-la-tasa-de-politica-monetaria-en-550/"
-  },
-  {
-   "name_ko": "소비자물가 상승률(전년 대비)",
-   "value": "1.7%",
-   "as_of": "2026-09",
-   "source": "BCP",
-   "url": "https://www.bcp.gov.py/en/web/institucional/w/informe-de-inflaci%C3%B3n-septiembre-2026"
-  },
-  {
-   "name_ko": "근원물가 상승률(전년 대비)",
-   "value": "1.2%",
-   "as_of": "2026-09",
-   "source": "BCP",
-   "url": "https://www.bcp.gov.py/en/web/institucional/w/informe-de-inflaci%C3%B3n-septiembre-2026"
-  },
-  {
-   "name_ko": "2026년 GDP 성장률 전망",
-   "value": "5.0%",
-   "as_of": "2026-09",
-   "source": "BCP 통화정책보고서(IPoM)",
-   "url": "https://www.lanacion.com.py/negocios/2026/10/16/el-bcp-eleva-la-proyeccion-de-crecimiento-economico-a-5-para-2026/"
-  },
-  {
-   "name_ko": "2026년 물가상승률 전망",
-   "value": "3.0%",
-   "as_of": "2026-09",
-   "source": "BCP 통화정책보고서(IPoM)",
-   "url": "https://www.sudamerissecurities.com.py/market-alerts/bcp-eleva-al-5-su-proyeccion-de-crecimiento-para-2026-y-recorta-la-de-inflacion-a-3/"
-  },
-  {
-   "name_ko": "실업률",
-   "value": "4.1%",
-   "as_of": "2026-Q2",
-   "source": "INE",
-   "url": "https://www.ip.gov.py/ip/2026/07/31/mas-de-114-000-personas-se-incorporaron-al-mercado-laboral-en-el-segundo-trimestre-de-2026/"
-  }
  ]
 }

@@ -30,11 +30,11 @@
 파라과이는 별도 객체 파일로 만든다.
 ```json
 {"news":[...위와 같은 형식, country "PY"...],
- "regulatory":[{"date":"2026-10-21","agency":"DINAVISA","title_ko":"...","summary_ko":"...","importance":"high","url":"https://..."}],
- "indicators":[{"name_ko":"기준금리","value":"5.50%","as_of":"2026-10","source":"BCP","url":"https://..."}]}
+ "regulatory":[{"date":"2026-10-21","agency":"DINAVISA","title_ko":"...","summary_ko":"...","importance":"high","url":"https://..."}]}
 ```
 - regulatory: DINAVISA·MSPBS·DNCP(의료기기·의약품 조달)·IPS 동향. 최근 30일까지 보관된다.
-- indicators: 새 발표가 있을 때만 넣는다(넣으면 전체 교체). 기준금리, 물가상승률, 성장률 전망, 실업률 등. 환율은 화면에서 실시간으로 불러오므로 넣지 않는다.
+- 경제지표는 모으지 않는다. 환율은 화면에서 실시간으로 불러온다.
+- summary_ko는 화면에는 나라 상세 목록에서만 보이지만, 계속 써 둔다.
 
 ## 4. 반영
 ```bash

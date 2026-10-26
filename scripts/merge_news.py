@@ -94,7 +94,7 @@ def merge(old, new, checker, cutoff, label):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--news", nargs="*", default=[], help="새 뉴스 JSON 배열 파일들")
-    ap.add_argument("--paraguay", help="파라과이 JSON 객체 파일 {news, regulatory, indicators}")
+    ap.add_argument("--paraguay", help="파라과이 JSON 객체 파일 {news, regulatory}")
     ap.add_argument("--check", action="store_true", help="현재 데이터만 정리")
     args = ap.parse_args()
 
@@ -104,7 +104,7 @@ def main():
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
     store = load(NEWS, {"updated_at": None, "items": []})
-    py = load(PARAGUAY, {"updated_at": None, "regulatory": [], "indicators": []})
+    py = load(PARAGUAY, {"updated_at": None, "regulatory": []})
 
     incoming = []
     for f in args.news:
@@ -116,8 +116,6 @@ def main():
 
     store["items"] = merge(store["items"], incoming, check_news, news_cutoff, "뉴스")
     py["regulatory"] = merge(py.get("regulatory", []), py_new.get("regulatory", []), check_reg, reg_cutoff, "규제")
-    if py_new.get("indicators"):
-        py["indicators"] = py_new["indicators"]
 
     if incoming or py_new or not store.get("updated_at"):
         store["updated_at"] = now
