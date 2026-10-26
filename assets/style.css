@@ -24,6 +24,9 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  /* 한글은 낱말 단위로 줄을 바꾸고, 너무 긴 낱말만 중간에서 끊는다 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
