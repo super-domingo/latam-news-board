@@ -208,14 +208,22 @@
 
     var ctx = nightCanvas.getContext('2d');
     var img = ctx.createImageData(w, h);
-    var px = img.data, MAX = 0.26;  // 밤은 옅은 푸른빛으로만 덮는다
+    var px = img.data;
+    var NIGHT = 0.48;   // 밤: 짙은 남색을 최대 48%까지 덮는다
+    var DAY = 0.16;     // 낮: 해가 높을수록 따뜻한 햇빛색을 최대 16%까지 더한다
     for (y = 0; y < h; y++) {
       var la = lats[y] * RAD, a = Math.sin(la) * sinDec, b = Math.cos(la) * cosDec;
       for (x = 0; x < w; x++) {
         var el = Math.asin(a + b * Math.cos((lons[x] - sun.lon) * RAD)) / RAD;
-        var t = el >= 0 ? 0 : el <= -12 ? 1 : -el / 12;
         var i = (y * w + x) * 4;
-        px[i] = 28; px[i + 1] = 64; px[i + 2] = 140; px[i + 3] = Math.round(t * MAX * 255);
+        if (el > 0) {
+          px[i] = 255; px[i + 1] = 226; px[i + 2] = 140;
+          px[i + 3] = Math.round(Math.min(el / 50, 1) * DAY * 255);
+        } else {
+          var t = el <= -12 ? 1 : -el / 12;
+          px[i] = 14; px[i + 1] = 34; px[i + 2] = 88;
+          px[i + 3] = Math.round(t * NIGHT * 255);
+        }
       }
     }
     ctx.putImageData(img, 0, 0);
