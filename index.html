@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>중남미 뉴스 현황판 | 사이넥스 헬스케어혁신연구소</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>중남미 뉴스 현황판</h1>
+      <span class="sub">멕시코·중미·남미 20개국 · 최근 7일</span>
+    </div>
+    <div class="filters" role="group" aria-label="주제 필터">
+      <button class="chip on" data-cat="all">전체</button>
+      <button class="chip" data-cat="정세">정세</button>
+      <button class="chip" data-cat="정치·사회">정치·사회</button>
+      <button class="chip" data-cat="보건의료">보건의료</button>
+    </div>
+    <div class="legend">
+      <span><i class="dot high"></i>즉시 확인</span>
+      <span><i class="dot medium"></i>주의</span>
+      <span><i class="dot low"></i>참고</span>
+    </div>
+    <div class="meta">
+      <div>최종 업데이트 <b id="updatedAt">-</b></div>
+      <div class="muted">매일 07:00 · 13:00 (KST) 갱신</div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="map-area">
+      <div id="map" aria-label="중남미 지도"></div>
+      <div class="map-stats" id="mapStats"></div>
+      <aside class="drawer" id="drawer" aria-hidden="true">
+        <div class="drawer-head">
+          <h2 id="drawerTitle">-</h2>
+          <button class="icon-btn" id="drawerClose" aria-label="닫기">✕</button>
+        </div>
+        <div class="drawer-sub" id="drawerSub"></div>
+        <ul class="news-list" id="drawerList"></ul>
+      </aside>
+    </section>
+
+    <section class="py-panel" id="pyPanel">
+      <div class="py-head">
+        <h2>파라과이 <span class="tag">지사</span></h2>
+        <span class="muted" id="pyCount"></span>
+      </div>
+
+      <div class="fx" id="fx">
+        <div class="fx-item"><span class="muted">USD → PYG</span><b id="fxUsd">-</b></div>
+        <div class="fx-item"><span class="muted">1,000원 → PYG</span><b id="fxKrw">-</b></div>
+        <div class="fx-note muted" id="fxNote">환율 불러오는 중…</div>
+      </div>
+
+      <div class="indicators" id="indicators"></div>
+
+      <div class="tabs" role="tablist">
+        <button class="tab on" data-tab="news" role="tab">뉴스</button>
+        <button class="tab" data-tab="reg" role="tab">보건·규제 동향</button>
+      </div>
+      <ul class="news-list" id="pyNews"></ul>
+      <ul class="news-list hidden" id="pyReg"></ul>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

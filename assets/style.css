@@ -1,0 +1,189 @@
+:root {
+  --bg: #0b1220;
+  --panel: #111a2c;
+  --panel-2: #16223a;
+  --line: #24324c;
+  --text: #e6ebf2;
+  --muted: #8a97ab;
+  --ocean: #0b1220;
+  --land: #1a2537;
+  --land-target: #233350;
+  --border: #3a4d6b;
+  --high: #e5484d;
+  --medium: #f2994a;
+  --low: #8b95a1;
+  --accent: #4da3ff;
+  --py: #3ccf91;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "NanumSquare", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.muted { color: var(--muted); }
+.hidden { display: none !important; }
+
+/* 상단 바 */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+  flex-wrap: wrap;
+}
+.brand h1 { font-size: 20px; margin: 0; font-weight: 800; letter-spacing: -0.3px; }
+.brand .sub { color: var(--muted); font-size: 12px; }
+.filters { display: flex; gap: 6px; }
+.chip {
+  background: transparent; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 999px;
+  padding: 5px 12px; font: inherit; font-size: 13px; cursor: pointer;
+}
+.chip.on { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 700; }
+.legend { display: flex; gap: 14px; font-size: 13px; color: var(--muted); }
+.dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
+.dot.high { background: var(--high); }
+.dot.medium { background: var(--medium); }
+.dot.low { background: var(--low); }
+.meta { margin-left: auto; text-align: right; font-size: 13px; }
+.meta .muted { font-size: 12px; }
+
+/* 본문: 지도 75% / 파라과이 25% */
+.layout { flex: 1; display: flex; min-height: 0; }
+.map-area { position: relative; flex: 0 0 75%; min-width: 0; overflow: hidden; }
+#map { position: absolute; inset: 0; background: var(--ocean); }
+.py-panel {
+  flex: 0 0 25%;
+  min-width: 0;
+  border-left: 1px solid var(--line);
+  background: var(--panel);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+
+/* 지도 위 순환 뉴스 카드 */
+.leaflet-container { font-family: inherit; }
+.news-card {
+  position: absolute; z-index: 600; width: 300px;
+  background: rgba(17, 26, 44, 0.96);
+  border: 1px solid var(--line); border-left: 5px solid var(--low);
+  border-radius: 10px; padding: 12px 14px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+  cursor: pointer; transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.news-card.high { border-left-color: var(--high); }
+.news-card.medium { border-left-color: var(--medium); }
+.news-card.leaving { opacity: 0; transform: translateY(6px); }
+.news-card .pop-anim { animation: fadeIn 0.5s ease; }
+.pop-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 6px; }
+.pop-country { font-weight: 800; font-size: 14px; }
+.pop-date { color: var(--muted); font-size: 12px; white-space: nowrap; }
+.pop-title { font-weight: 700; font-size: 15px; line-height: 1.4; margin-bottom: 6px; }
+.pop-summary { color: #c4cddb; font-size: 13px; line-height: 1.5; margin-bottom: 8px; }
+.pop-foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 12px; }
+.cat {
+  display: inline-block; font-size: 11px; padding: 2px 7px; border-radius: 4px;
+  background: var(--panel-2); color: var(--muted); border: 1px solid var(--line); white-space: nowrap;
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.focus-ring {
+  position: absolute; z-index: 590; width: 44px; height: 44px; margin: -22px 0 0 -22px;
+  border-radius: 50%; border: 2px solid var(--accent); pointer-events: none;
+  animation: ring 1.6s ease-out infinite;
+}
+@keyframes ring { from { transform: scale(0.5); opacity: 1; } to { transform: scale(1.4); opacity: 0; } }
+
+.country-label {
+  background: none; border: none; box-shadow: none;
+  color: #b7c3d6; font-size: 11px; font-weight: 700; text-shadow: 0 1px 2px #000;
+}
+.country-label::before { display: none; }
+.count-badge {
+  display: grid; place-items: center;
+  width: 22px; height: 22px; border-radius: 50%;
+  font-size: 11px; font-weight: 800; color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.count-badge.high { background: var(--high); animation: pulse 2s infinite; }
+.count-badge.medium { background: var(--medium); }
+.count-badge.low { background: #5b6676; }
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(229, 72, 77, 0.6); }
+  70% { box-shadow: 0 0 0 12px rgba(229, 72, 77, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(229, 72, 77, 0); }
+}
+
+.map-stats {
+  position: absolute; left: 16px; bottom: 16px; z-index: 500;
+  background: rgba(17, 26, 44, 0.9); border: 1px solid var(--line);
+  border-radius: 10px; padding: 10px 14px; font-size: 13px;
+  display: flex; gap: 16px;
+}
+.map-stats b { font-size: 18px; display: block; }
+
+/* 국가 상세 서랍 */
+.drawer {
+  position: absolute; top: 0; right: 0; bottom: 0; width: min(420px, 90%);
+  background: var(--panel); border-left: 1px solid var(--line);
+  z-index: 800; transform: translateX(100%); transition: transform 0.25s ease;
+  display: flex; flex-direction: column;
+}
+.drawer.open { transform: none; }
+.drawer-head { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px 4px; }
+.drawer-head h2 { margin: 0; font-size: 18px; }
+.drawer-sub { padding: 0 16px 10px; color: var(--muted); font-size: 12px; border-bottom: 1px solid var(--line); }
+.icon-btn { background: none; border: 1px solid var(--line); color: var(--text); border-radius: 6px; width: 30px; height: 30px; cursor: pointer; }
+
+/* 뉴스 목록 (서랍·파라과이 공용) */
+.news-list { list-style: none; margin: 0; padding: 4px 0; overflow-y: auto; flex: 1; }
+.news-item { padding: 10px 16px; border-bottom: 1px solid var(--line); border-left: 4px solid var(--low); }
+.news-item.high { border-left-color: var(--high); }
+.news-item.medium { border-left-color: var(--medium); }
+.news-item .row1 { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+.news-item .title { font-weight: 700; line-height: 1.4; margin-bottom: 4px; }
+.news-item .summary { color: #c4cddb; font-size: 13px; line-height: 1.5; margin-bottom: 4px; }
+.news-item .src { font-size: 12px; }
+.empty { padding: 24px 16px; color: var(--muted); text-align: center; }
+
+/* 파라과이 패널 */
+.py-head { display: flex; justify-content: space-between; align-items: baseline; padding: 14px 16px 8px; }
+.py-head h2 { margin: 0; font-size: 18px; }
+.tag { font-size: 11px; background: var(--py); color: #04241a; padding: 2px 6px; border-radius: 4px; vertical-align: 2px; font-weight: 800; }
+.fx { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 0 16px 8px; }
+.fx-item { background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; }
+.fx-item span { display: block; font-size: 11px; }
+.fx-item b { font-size: 17px; }
+.fx-note { grid-column: 1 / -1; font-size: 11px; }
+.indicators { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 0 16px 10px; }
+.ind { color: var(--text); text-decoration: none; background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; font-size: 12px; }
+.ind b { display: block; font-size: 15px; color: var(--text); }
+.ind small { color: var(--muted); font-size: 10px; }
+.tabs { display: flex; border-bottom: 1px solid var(--line); padding: 0 8px; }
+.tab { flex: 1; background: none; border: none; color: var(--muted); font: inherit; padding: 9px; cursor: pointer; border-bottom: 2px solid transparent; }
+.tab.on { color: var(--text); font-weight: 800; border-bottom-color: var(--py); }
+
+/* 좁은 화면: 위아래로 쌓기 */
+@media (max-width: 900px) {
+  body { overflow-x: hidden; overflow-y: auto; }
+  .topbar { gap: 10px; padding: 10px 16px; }
+  .meta { margin-left: 0; text-align: left; }
+  .layout { flex-direction: column; }
+  .map-area { flex: none; height: 62vh; }
+  .py-panel { flex: none; border-left: none; border-top: 1px solid var(--line); }
+  .py-panel .news-list { max-height: 70vh; }
+  .news-card { width: 240px; }
+  .map-stats { display: none; }
+}

@@ -1,0 +1,97 @@
+{
+ "updated_at": "2026-10-26T07:56:21+00:00",
+ "regulatory": [
+  {
+   "date": "2026-10-21",
+   "agency": "MSPBS",
+   "title_ko": "보건부 의약품 낙찰 2,130억 과라니, 평균 18% 절감",
+   "summary_ko": "보건부의 의약품 공공조달 낙찰액이 2,130억 과라니를 넘었으며, 이전 구매 대비 평균 단가를 18% 낮췄다고 밝혔다.",
+   "importance": "medium",
+   "url": "https://www.lanacion.com.py/pais/2026/10/21/compras-de-salud-superan-g-213000-millones-en-farmacos-y-reducen-costos-en-un-18/"
+  },
+  {
+   "date": "2026-10-08",
+   "agency": "IPS",
+   "title_ko": "IPS 이사회, 의약품·소모품 조달 대책 승인",
+   "summary_ko": "IPS 이사회가 정례회의 074/2026에서 의약품·의료 소모품 조달 안건을 다뤘다. 질병·출산 프로그램 채무 이행을 위한 이타우 은행 차입도 승인했다.",
+   "importance": "medium",
+   "url": "https://prensamercosur.org/2026/10/12/consejo-del-ips-avanza-en-soluciones-para-medicamentos-insumos-y-servicios-de-salud/"
+  },
+  {
+   "date": "2026-10-06",
+   "agency": "MSPBS",
+   "title_ko": "보건부·경제부, 공급업체 체납 해소와 의약품 구매조건 개선 논의",
+   "summary_ko": "이사이아스 프레테스 보건장관과 오스카르 로베라 경제장관이 2026년 재정 마감과 2027년 예산을 논의했다. 2027년 2월 예정된 경제부 채권 발행 자금으로 공급업체 체납금을 상환할 계획이다.",
+   "importance": "medium",
+   "url": "https://www.lanacion.com.py/politica/2026/10/06/salud-apunta-a-saldar-deudas-y-mejorar-las-condiciones-de-compra-de-medicamentos/"
+  },
+  {
+   "date": "2026-10-05",
+   "agency": "DINAVISA",
+   "title_ko": "미등록 미용 제품 SCULPTRA·POWER COL-TRA 위생경보",
+   "summary_ko": "DINAVISA가 위생등록 없이 유통되는 미용 시술 제품 SCULPTRA와 POWER COL-TRA에 대해 위생경보를 발령했다.",
+   "importance": "medium",
+   "url": "https://dinavisa.gov.py/category/alertas/"
+  },
+  {
+   "date": "2026-10-01",
+   "agency": "DINAVISA",
+   "title_ko": "첨단치료의약품(ATMP) 위생등록 의무화 (결의 413/2026)",
+   "summary_ko": "첨단치료의약품의 수입·수출·제조·판매·유통 시 DINAVISA 위생등록을 의무화했다. ATMP 등록 요건 규정안은 별도로 의견수렴 중이다. 일부 법령 데이터베이스는 같은 번호를 희귀질환 의약품 절차와 연결하고 있어 원문 확인이 필요하다.",
+   "importance": "high",
+   "url": "https://dinavisa.gov.py/resoluciones/"
+  },
+  {
+   "date": "2026-10-01",
+   "agency": "DINAVISA",
+   "title_ko": "비치료용 니코틴 파우치 DINAVISA 등록 의무화 (결의 412/2026)",
+   "summary_ko": "치료 목적이 아닌 니코틴 파우치 제품의 제조·수입·수출·소분 등을 하려면 DINAVISA에 의무적으로 등록하도록 했다.",
+   "importance": "medium",
+   "url": "https://dinavisa.gov.py/resoluciones/"
+  }
+ ],
+ "indicators": [
+  {
+   "name_ko": "기준금리",
+   "value": "5.50%",
+   "as_of": "2026-10",
+   "source": "BCP",
+   "url": "https://www.lanacion.com.py/negocios/2026/10/25/el-bcp-mantiene-congelada-la-tasa-de-politica-monetaria-en-550/"
+  },
+  {
+   "name_ko": "소비자물가 상승률(전년 대비)",
+   "value": "1.7%",
+   "as_of": "2026-09",
+   "source": "BCP",
+   "url": "https://www.bcp.gov.py/en/web/institucional/w/informe-de-inflaci%C3%B3n-septiembre-2026"
+  },
+  {
+   "name_ko": "근원물가 상승률(전년 대비)",
+   "value": "1.2%",
+   "as_of": "2026-09",
+   "source": "BCP",
+   "url": "https://www.bcp.gov.py/en/web/institucional/w/informe-de-inflaci%C3%B3n-septiembre-2026"
+  },
+  {
+   "name_ko": "2026년 GDP 성장률 전망",
+   "value": "5.0%",
+   "as_of": "2026-09",
+   "source": "BCP 통화정책보고서(IPoM)",
+   "url": "https://www.lanacion.com.py/negocios/2026/10/16/el-bcp-eleva-la-proyeccion-de-crecimiento-economico-a-5-para-2026/"
+  },
+  {
+   "name_ko": "2026년 물가상승률 전망",
+   "value": "3.0%",
+   "as_of": "2026-09",
+   "source": "BCP 통화정책보고서(IPoM)",
+   "url": "https://www.sudamerissecurities.com.py/market-alerts/bcp-eleva-al-5-su-proyeccion-de-crecimiento-para-2026-y-recorta-la-de-inflacion-a-3/"
+  },
+  {
+   "name_ko": "실업률",
+   "value": "4.1%",
+   "as_of": "2026-Q2",
+   "source": "INE",
+   "url": "https://www.ip.gov.py/ip/2026/07/31/mas-de-114-000-personas-se-incorporaron-al-mercado-laboral-en-el-segundo-trimestre-de-2026/"
+  }
+ ]
+}
