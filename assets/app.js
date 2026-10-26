@@ -243,19 +243,26 @@
   // ---------- 순환 카드 ----------
   // 카드 여러 장을 시차를 두고 하나씩 바꾼다. 같은 나라 카드가 동시에 두 장 뜨지 않게 한다
   var slots = [];
-  var queue = [], qi = 0;
+  // 메르코수르 회원국(정회원; 회원 자격이 정지된 베네수엘라는 제외) 기사를
+  // 비회원국 기사보다 2배 자주 보여준다 (메르코수르 2 : 비회원 1)
+  var MERCOSUR = { AR: 1, BR: 1, PY: 1, UY: 1, BO: 1 };
+  var MERCOSUR_RATIO = 2;
+  var queues = { M: [], N: [] }, qpos = { M: 0, N: 0 }, shownCount = { M: 0, N: 0 };
+  function groupOf(n) { return MERCOSUR[n.country] ? 'M' : 'N'; }
   var paused = false;
 
-  function buildQueue() {
-    var items = filtered().sort(byDateDesc);
+  function buildQueue(group) {
+    var items = filtered().filter(function (n) { return groupOf(n) === group; });
     // 중요한 기사부터(빨강 → 주황 → 회색, 같은 등급은 최신순) 나라별 최대 4건
+    // (메르코수르는 나라 수가 적어 나라별 최대 8건)
+    var cap = group === 'M' ? 8 : 4;
     items.sort(function (a, b) {
       return (IMP_RANK[b.importance] || 0) - (IMP_RANK[a.importance] || 0) || byDateDesc(a, b);
     });
     var perCountry = {}, q = [];
     items.forEach(function (n) {
       perCountry[n.country] = (perCountry[n.country] || 0) + 1;
-      if (perCountry[n.country] <= 4) q.push(n);
+      if (perCountry[n.country] <= cap) q.push(n);
     });
     // 같은 나라가 연달아 나오지 않게 하되 중요도 순서는 최대한 지킨다
     var out = [], pool = q.slice();
@@ -269,25 +276,29 @@
     }
     return out;
   }
+  function pickFrom(group, shown) {
+    var q = queues[group];
+    if (qpos[group] >= q.length) { q = queues[group] = buildQueue(group); qpos[group] = 0; }
+    for (var k = 0; k < q.length; k++) {
+      var j = (qpos[group] + k) % q.length, n = q[j];
+      if (!shown[n.country]) {
+        // 고른 항목을 현재 위치로 당겨 와 순서를 유지한다
+        q.splice(j, 1);
+        q.splice(qpos[group], 0, n);
+        qpos[group]++;
+        return n;
+      }
+    }
+    return null;
+  }
   function nextItem(slot) {
-    if (qi >= queue.length) { queue = buildQueue(); qi = 0; }
-    if (!queue.length) return null;
     var shown = {};
     slots.forEach(function (s) { if (s !== slot && s.cur) shown[s.cur.country] = true; });
     var view = map.getBounds();   // 화면 밖으로 잘린 나라는 건너뛴다
     Object.keys(COUNTRIES).forEach(function (c2) { if (!view.contains(COUNTRIES[c2].at)) shown[c2] = true; });
-    for (var k = 0; k < queue.length; k++) {
-      var n = queue[(qi + k) % queue.length];
-      if (!shown[n.country]) {
-        // 고른 항목을 현재 위치로 당겨 와 순서를 유지한다
-        var j = (qi + k) % queue.length;
-        queue.splice(j, 1);
-        queue.splice(qi, 0, n);
-        qi++;
-        return n;
-      }
-    }
-    return queue[qi++];
+    // 지금까지 띄운 수를 보고 2:1 비율에 모자란 쪽에서 먼저 고른다
+    var want = shownCount.M < MERCOSUR_RATIO * (shownCount.N + 1) ? 'M' : 'N';
+    return pickFrom(want, shown) || pickFrom(want === 'M' ? 'N' : 'M', shown);
   }
   function makeSlot(delay) {
     var area = document.querySelector('.map-area');
@@ -334,6 +345,7 @@
         n = alt;
       }
       if (!ok) { slot.cur = null; slot.rect = null; setVisible(slot, false); return; }
+      shownCount[groupOf(n)]++;
       slot.el.classList.remove('leaving');
       setVisible(slot, true);
     }, 350);
@@ -440,7 +452,7 @@
     var count = narrow ? CARDS_NARROW : CARDS_WIDE;
     for (var i = 0; i < count; i++) slots.push(makeSlot(300 + i * (ROTATE_MS / count)));
   }
-  function resetQueue() { queue = []; qi = 0; }
+  function resetQueue() { queues = { M: [], N: [] }; qpos = { M: 0, N: 0 }; }
 
   // ---------- 국가 상세 서랍 ----------
   function openDrawer(c2) {
