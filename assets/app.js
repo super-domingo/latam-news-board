@@ -33,7 +33,7 @@
   var IMP_KO = { high: '즉시 확인', medium: '주의', low: '참고' };
   var WEEKDAY = ['일', '월', '화', '수', '목', '금', '토'];
   var ROTATE_MS = 18000;          // 카드 한 장이 머무는 시간
-  var CARDS_WIDE = 6;             // 넓은 화면에 동시에 띄우는 카드 수
+  var CARDS_WIDE = 5;             // 넓은 화면에 동시에 띄우는 카드 수
   var CARDS_NARROW = 2;
   var RELOAD_MS = 30 * 60 * 1000; // 데이터 다시 읽는 주기
   var SUN_MS = 60 * 1000;         // 낮·밤 경계 다시 그리는 주기
@@ -103,9 +103,12 @@
     window.addEventListener('resize', function () { fitView(); drawNight(); placeAll(); });
     map.on('move zoom', function () { drawNight(); placeAll(); });
   }
+  // 주소 뒤에 ?zoom=1.5 처럼 붙이면 그 배율만큼 더 확대한다
+  var ZOOM_BOOST = parseFloat(new URLSearchParams(location.search).get('zoom')) || 1;
   function fitView() {
-    // 미국과 아르헨티나 남부는 잘라내고 멕시코~부에노스아이레스 아래까지 크게 보여준다
-    map.fitBounds([[31.5, -106], [-41, -40]], { padding: [0, 0] });
+    // 20개국 배지가 모두 들어오는 범위로 꽉 채운다(미국·아르헨티나 남부 제외)
+    map.fitBounds([[26, -104], [-37.5, -50]], { padding: [0, 0] });
+    if (ZOOM_BOOST !== 1) map.setZoom(map.getZoom() + Math.log(ZOOM_BOOST) / Math.LN2, { animate: false });
   }
   function countryStyle(feature) {
     var c2 = ISO3_TO_2[feature.id];
@@ -232,14 +235,16 @@
 
   function buildQueue() {
     var items = filtered().sort(byDateDesc);
-    // 나라별 최신 4건까지, 빨강은 한 번 더 넣어 자주 보이게 한다
+    // 중요한 기사부터(빨강 → 주황 → 회색, 같은 등급은 최신순) 나라별 최대 4건
+    items.sort(function (a, b) {
+      return (IMP_RANK[b.importance] || 0) - (IMP_RANK[a.importance] || 0) || byDateDesc(a, b);
+    });
     var perCountry = {}, q = [];
     items.forEach(function (n) {
       perCountry[n.country] = (perCountry[n.country] || 0) + 1;
       if (perCountry[n.country] <= 4) q.push(n);
     });
-    q.slice().forEach(function (n) { if (n.importance === 'high') q.push(n); });
-    // 같은 나라가 연달아 나오지 않도록 섞는다
+    // 같은 나라가 연달아 나오지 않게 하되 중요도 순서는 최대한 지킨다
     var out = [], pool = q.slice();
     while (pool.length) {
       var idx = 0;
@@ -256,6 +261,8 @@
     if (!queue.length) return null;
     var shown = {};
     slots.forEach(function (s) { if (s !== slot && s.cur) shown[s.cur.country] = true; });
+    var view = map.getBounds();   // 화면 밖으로 잘린 나라는 건너뛴다
+    Object.keys(COUNTRIES).forEach(function (c2) { if (!view.contains(COUNTRIES[c2].at)) shown[c2] = true; });
     for (var k = 0; k < queue.length; k++) {
       var n = queue[(qi + k) % queue.length];
       if (!shown[n.country]) {

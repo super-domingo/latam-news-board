@@ -75,8 +75,8 @@ a:hover { text-decoration: underline; }
 /* 지도 위 순환 뉴스 카드 */
 .leaflet-container { font-family: inherit; }
 .news-card {
-  position: absolute; z-index: 600; width: 240px;
-  background: rgba(17, 26, 44, 0.96);
+  position: absolute; z-index: 600; width: 288px;
+  background: rgba(17, 26, 44, 0.6);
   border: 1px solid var(--line); border-left: 5px solid var(--low);
   border-radius: 9px; padding: 9px 11px;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
@@ -89,7 +89,7 @@ a:hover { text-decoration: underline; }
 .pop-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 4px; }
 .pop-country { font-weight: 800; font-size: 14px; }
 .pop-date { color: var(--muted); font-size: 12px; white-space: nowrap; }
-.pop-title { font-weight: 700; font-size: 14px; line-height: 1.4; margin-bottom: 6px; }
+.pop-title { text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8); font-weight: 700; font-size: 14px; line-height: 1.4; margin-bottom: 6px; }
 .pop-summary { color: #c4cddb; font-size: 13px; line-height: 1.5; margin-bottom: 8px; }
 .pop-foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 12px; }
 .cat {
