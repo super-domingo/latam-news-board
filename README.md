@@ -3,7 +3,7 @@
 사이넥스 헬스케어혁신연구소 · 멕시코·중미·남미 20개국의 최근 7일 뉴스를 지도 위에 보여주는 현황판입니다.
 
 - 주소: https://super-domingo.github.io/latam-news-board/
-- 갱신: 매일 07:00 · 13:00 (KST), Claude 예약 작업이 `UPDATE_GUIDE.md` 지침대로 `data/`를 갱신
+- 갱신: 매일 07:00 (KST), Claude 예약 작업(전용 세션)이 `UPDATE_GUIDE.md` 지침대로 `data/`를 갱신
 - 주제: 정세 · 정치·사회 · 보건의료 / 중요도 3단계(빨강 즉시 확인 · 주황 주의 · 회색 참고)
 - 파라과이(지사) 전용 영역: 뉴스 상세, 보건·규제 동향(DINAVISA·MSPBS 등), 실시간 환율
 
