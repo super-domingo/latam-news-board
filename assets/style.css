@@ -56,9 +56,9 @@ a:hover { text-decoration: underline; }
 .dot.high { background: var(--high); }
 .dot.medium { background: var(--medium); }
 .dot.low { background: var(--low); }
-.meta { margin-left: auto; text-align: right; font-size: 11px; line-height: 1.45; }
-.meta .muted { font-size: 10px; }
-.meta .org { font-size: 13px; font-weight: 800; color: var(--brand); letter-spacing: -0.2px; }
+.meta { margin-left: auto; text-align: right; font-size: 10px; line-height: 1.4; }
+.meta .muted { font-size: 9px; }
+.meta .org { font-size: 15px; margin-bottom: 2px; font-weight: 800; color: var(--brand); letter-spacing: -0.2px; }
 
 /* 본문: 지도 75% / 파라과이 25% */
 .layout { flex: 1; display: flex; min-height: 0; }
