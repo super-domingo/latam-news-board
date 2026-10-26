@@ -4,8 +4,9 @@
 
   // 대상 20개국: ISO2 → { iso3, 한국어명, 표시 좌표, 카드 방향 }
   // side: 'w'는 카드를 지점 왼쪽(태평양 쪽), 'e'는 오른쪽(대서양 쪽)에 먼저 놓아 본다
+  // pin: 카드를 늘 그 자리(지도 왼쪽 위 기준 x, y)에 고정한다
   var COUNTRIES = {
-    MX: { iso3: 'MEX', ko: '멕시코', at: [23.6, -102.5], side: 'w' },
+    MX: { iso3: 'MEX', ko: '멕시코', at: [23.6, -102.5], side: 'w', pin: [60, 10] },
     GT: { iso3: 'GTM', ko: '과테말라', at: [15.4, -91.6], side: 'w' },
     BZ: { iso3: 'BLZ', ko: '벨리즈', at: [18.6, -87.2], side: 'e' },
     HN: { iso3: 'HND', ko: '온두라스', at: [16.4, -84.6], side: 'e' },
@@ -32,7 +33,7 @@
   var IMP_RANK = { high: 3, medium: 2, low: 1 };
   var IMP_KO = { high: '즉시 확인', medium: '주의', low: '참고' };
   var WEEKDAY = ['일', '월', '화', '수', '목', '금', '토'];
-  var ROTATE_MS = 18000;          // 카드 한 장이 머무는 시간
+  var ROTATE_MS = 20700;          // 카드 한 장이 머무는 시간
   var CARDS_WIDE = 5;             // 넓은 화면에 동시에 띄우는 카드 수
   var CARDS_NARROW = 2;
   var RELOAD_MS = 30 * 60 * 1000; // 데이터 다시 읽는 주기
@@ -309,16 +310,24 @@
     if (!n) { slot.cur = null; slot.rect = null; setVisible(slot, false); return; }
     slot.el.classList.add('leaving');
     setTimeout(function () {
-      slot.cur = n;
-      renderCard(slot, n);
+      // 다른 카드와 10% 이상 겹치면 다음 기사로 바꿔 최대 5번 다시 놓아 본다
+      for (var tries = 0; tries < 5; tries++) {
+        slot.cur = n;
+        renderCard(slot, n);
+        if (placeCard(slot) < 0.1) break;
+        var alt = nextItem(slot);
+        if (!alt) break;
+        n = alt;
+      }
       slot.el.classList.remove('leaving');
       setVisible(slot, true);
-      placeCard(slot);
     }, 350);
   }
   function renderCard(slot, n) {
     var imp = IMP_RANK[n.importance] ? n.importance : 'low';
     slot.el.className = 'news-card ' + imp;
+    // 고정 자리 카드(멕시코)는 나라 배지를 가리지 않게 폭을 줄인다
+    slot.el.style.width = COUNTRIES[n.country].pin ? '270px' : '';
     slot.el.innerHTML = '<div class="pop-anim">' +
       '<div class="pop-head"><span class="pop-country">' + esc(COUNTRIES[n.country].ko) + '</span>' +
       '<span class="pop-date">' + esc(fmtDate(n.date)) + '</span></div>' +
@@ -326,49 +335,64 @@
       '<div class="pop-foot"><span class="cat">' + esc(n.category) + '</span>' +
       '<a href="' + esc(safeUrl(n.url)) + '" target="_blank" rel="noopener">' + esc(n.source || '원문') + ' ↗</a></div></div>';
   }
-  function overlaps(r, others) {
-    for (var i = 0; i < others.length; i++) {
-      var o = others[i];
-      if (r.l < o.r + 6 && r.r + 6 > o.l && r.t < o.b + 6 && r.b + 6 > o.t) return true;
-    }
-    return false;
+  function overlapArea(a, b) {
+    var x = Math.min(a.r, b.r) - Math.max(a.l, b.l);
+    var y = Math.min(a.b, b.b) - Math.max(a.t, b.t);
+    return x > 0 && y > 0 ? x * y : 0;
   }
-  // 선호 방향 → 반대 방향 → 위아래로 비켜 가며 다른 카드와 겹치지 않는 자리를 찾는다
+  function pad(r, m) { return { l: r.l - m, r: r.r + m, t: r.t - m, b: r.b + m }; }
+  // 후보 자리를 넓게 훑어, 다른 카드와 겹치는 면적이 가장 작은 곳을 고른다.
+  // 카드끼리 겹침 > 확대 버튼·통계 상자 > 나라 배지 순으로 무겁게 따진다.
+  // 반환값: 다른 카드와 겹친 면적 비율(0~1)
   function placeCard(slot) {
-    if (!slot.cur) return;
+    if (!slot.cur) return 0;
     var c = COUNTRIES[slot.cur.country];
     var p = map.latLngToContainerPoint(c.at);
     var area = document.querySelector('.map-area');
     var W = area.clientWidth, H = area.clientHeight;
-    var w = slot.el.offsetWidth, h = slot.el.offsetHeight, gap = 40;
-    var others = slots.filter(function (s) { return s !== slot && s.rect && s.cur; })
-      .map(function (s) { return s.rect; });
-    others.push({ l: 0, r: 230, t: H - 80, b: H });  // 왼쪽 아래 통계 상자
-    others.push({ l: 0, r: 50, t: 0, b: 90 });       // 확대·축소 단추
-    Object.keys(COUNTRIES).forEach(function (k2) {   // 나라 배지·이름은 가리지 않는다
+    var w = slot.el.offsetWidth, h = slot.el.offsetHeight;
+    var cards = slots.filter(function (s) { return s !== slot && s.rect && s.cur; })
+      .map(function (s) { return pad(s.rect, 8); });
+    var fixed = [
+      { l: 0, r: 230, t: H - 80, b: H },   // 왼쪽 아래 통계 상자
+      { l: 0, r: 54, t: 0, b: 92 }         // 확대·축소 단추
+    ];
+    var badges = Object.keys(COUNTRIES).map(function (k2) {
       var b = map.latLngToContainerPoint(COUNTRIES[k2].at);
-      others.push({ l: b.x - 32, r: b.x + 32, t: b.y - 12, b: b.y + 28 });
+      return { l: b.x - 32, r: b.x + 32, t: b.y - 12, b: b.y + 28 };
     });
-    var sides = c.side === 'w' ? ['w', 'e'] : ['e', 'w'];
-    var gaps = [gap, gap + 70, gap + 150];
-    var best = null;
-    for (var g = 0; g < gaps.length && !best; g++) {
-      for (var k = 0; k < 9 && !best; k++) {
-        var dy = (k % 2 ? 1 : -1) * Math.ceil(k / 2) * (h + 10);
-        for (var s = 0; s < 2; s++) {
-          var left = sides[s] === 'w' ? p.x - gaps[g] - w : p.x + gaps[g];
-          if (left < 8 || left + w > W - 8) continue;
-          var top = Math.min(Math.max(p.y - h / 2 + dy, 8), H - h - 8);
-          var r = { l: left, r: left + w, t: top, b: top + h };
-          if (!overlaps(r, others)) { best = r; break; }
+    var cands = [];
+    if (c.pin) {
+      // 고정 자리가 있는 나라(멕시코)는 확대·축소 단추 바로 오른쪽에 둔다
+      cands.push({ l: c.pin[0], r: c.pin[0] + w, t: c.pin[1], b: c.pin[1] + h });
+    } else {
+      var sides = c.side === 'w' ? ['w', 'e'] : ['e', 'w'];
+      [40, 110, 190, 280].forEach(function (gap, gi) {
+        for (var k = 0; k < 13; k++) {
+          var dy = (k % 2 ? 1 : -1) * Math.ceil(k / 2) * (h / 2 + 6);
+          sides.forEach(function (side, si) {
+            var left = side === 'w' ? p.x - gap - w : p.x + gap;
+            if (left < 8 || left + w > W - 8) return;
+            var top = Math.min(Math.max(p.y - h / 2 + dy, 8), H - h - 8);
+            cands.push({ l: left, r: left + w, t: top, b: top + h, pen: gi * 400 + si * 300 + k * 60 });
+          });
         }
+      });
+      if (!cands.length) {
+        var l0 = Math.min(Math.max(p.x + 40, 8), W - w - 8);
+        var t0 = Math.min(Math.max(p.y - h / 2, 8), H - h - 8);
+        cands.push({ l: l0, r: l0 + w, t: t0, b: t0 + h });
       }
     }
-    if (!best) {
-      var l0 = Math.min(Math.max(c.side === 'w' ? p.x - gap - w : p.x + gap, 8), W - w - 8);
-      var t0 = Math.min(Math.max(p.y - h / 2, 8), H - h - 8);
-      best = { l: l0, r: l0 + w, t: t0, b: t0 + h };
-    }
+    var best = null, bestScore = Infinity, bestCard = 0;
+    cands.forEach(function (r) {
+      var cardA = 0, score = r.pen || 0;
+      cards.forEach(function (o) { cardA += overlapArea(r, o); });
+      fixed.forEach(function (o) { score += overlapArea(r, o) * 20; });
+      badges.forEach(function (o) { score += overlapArea(r, o) * 3; });
+      score += cardA * 50;
+      if (score < bestScore) { bestScore = score; best = r; bestCard = cardA; }
+    });
     slot.rect = best;
     slot.el.style.left = best.l + 'px';
     slot.el.style.top = best.t + 'px';
@@ -378,6 +402,7 @@
     var ey = Math.min(Math.max(p.y, best.t + 12), best.b - 12);
     slot.line.setAttribute('x1', p.x); slot.line.setAttribute('y1', p.y);
     slot.line.setAttribute('x2', ex); slot.line.setAttribute('y2', ey);
+    return bestCard / (w * h);
   }
   function placeAll() {
     slots.forEach(function (s) { s.rect = null; });

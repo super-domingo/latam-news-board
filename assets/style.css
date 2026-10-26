@@ -76,7 +76,7 @@ a:hover { text-decoration: underline; }
 .leaflet-container { font-family: inherit; }
 .news-card {
   position: absolute; z-index: 600; width: 331px;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.45);
   border: 1px solid rgba(255, 255, 255, 0.9); border-left: 5px solid var(--low);
   border-radius: 9px; padding: 9px 11px;
   box-shadow: 0 6px 20px rgba(16, 52, 96, 0.18);
@@ -88,8 +88,8 @@ a:hover { text-decoration: underline; }
 .news-card .pop-anim { animation: fadeIn 0.5s ease; }
 .pop-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 4px; }
 .pop-country { font-weight: 800; font-size: 14px; color: var(--brand); }
-.pop-date { color: #4a5a70; font-size: 12px; white-space: nowrap; }
-.pop-title { text-shadow: 0 0 3px rgba(255, 255, 255, 0.9); color: #13233a; font-weight: 700; font-size: 14px; line-height: 1.4; margin-bottom: 6px; }
+.pop-date { text-shadow: 0 0 3px #fff; color: #3d4c61; font-size: 12px; white-space: nowrap; }
+.pop-title { text-shadow: 0 0 3px #fff, 0 0 6px rgba(255, 255, 255, 0.9); color: #13233a; font-weight: 700; font-size: 14px; line-height: 1.4; margin-bottom: 6px; }
 .pop-summary { color: #3c4b60; font-size: 13px; line-height: 1.5; margin-bottom: 8px; }
 .pop-foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 12px; }
 .cat {
