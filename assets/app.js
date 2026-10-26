@@ -112,15 +112,15 @@
   }
   function countryStyle(feature) {
     var c2 = ISO3_TO_2[feature.id];
-    if (!c2) return { color: '#4a5d7a', weight: 0.6, fillColor: '#2b3546', fillOpacity: 1 };
+    if (!c2) return { color: '#b9c6d6', weight: 0.6, fillColor: '#eef1f5', fillOpacity: 1 };
     var imp = maxImp(filtered().filter(function (n) { return n.country === c2; }));
-    var fill = '#36507a';
-    if (imp === 'high') fill = '#6a3a4c';
-    else if (imp === 'medium') fill = '#62513f';
+    var fill = '#ffffff';
+    if (imp === 'high') fill = '#fbe3e3';
+    else if (imp === 'medium') fill = '#fdf0dc';
     var isPy = c2 === 'PY';
     return {
-      color: isPy ? '#3ccf91' : '#6f86a8',
-      weight: isPy ? 2.4 : 0.9,
+      color: isPy ? '#14a06a' : '#7f97b5',
+      weight: isPy ? 2.6 : 0.9,
       fillColor: fill,
       fillOpacity: 1
     };
@@ -204,14 +204,14 @@
 
     var ctx = nightCanvas.getContext('2d');
     var img = ctx.createImageData(w, h);
-    var px = img.data, MAX = 0.62;
+    var px = img.data, MAX = 0.26;  // 밤은 옅은 푸른빛으로만 덮는다
     for (y = 0; y < h; y++) {
       var la = lats[y] * RAD, a = Math.sin(la) * sinDec, b = Math.cos(la) * cosDec;
       for (x = 0; x < w; x++) {
         var el = Math.asin(a + b * Math.cos((lons[x] - sun.lon) * RAD)) / RAD;
         var t = el >= 0 ? 0 : el <= -12 ? 1 : -el / 12;
         var i = (y * w + x) * 4;
-        px[i] = 2; px[i + 1] = 6; px[i + 2] = 18; px[i + 3] = Math.round(t * MAX * 255);
+        px[i] = 28; px[i + 1] = 64; px[i + 2] = 140; px[i + 3] = Math.round(t * MAX * 255);
       }
     }
     ctx.putImageData(img, 0, 0);
@@ -415,7 +415,7 @@
   function focusPy() {
     var p = document.getElementById('pyPanel');
     p.scrollIntoView({ behavior: 'smooth' });
-    p.animate([{ boxShadow: 'inset 0 0 0 3px #3ccf91' }, { boxShadow: 'inset 0 0 0 0 transparent' }], { duration: 1200 });
+    p.animate([{ boxShadow: 'inset 0 0 0 3px #14a06a' }, { boxShadow: 'inset 0 0 0 0 transparent' }], { duration: 1200 });
   }
   function renderPy() {
     var news = filtered().filter(function (n) { return n.country === 'PY'; }).sort(byDateDesc);
