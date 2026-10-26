@@ -6,7 +6,7 @@
   // side: 'w'는 카드를 지점 왼쪽(태평양 쪽), 'e'는 오른쪽(대서양 쪽)에 먼저 놓아 본다
   // pin: 카드를 늘 그 자리(지도 왼쪽 위 기준 x, y)에 고정한다
   var COUNTRIES = {
-    MX: { iso3: 'MEX', ko: '멕시코', at: [23.6, -102.5], side: 'w', pin: [60, 10] },
+    MX: { iso3: 'MEX', ko: '멕시코', at: [23.6, -102.5], side: 'w', pin: [10, 10] },
     GT: { iso3: 'GTM', ko: '과테말라', at: [15.4, -91.6], side: 'w' },
     BZ: { iso3: 'BLZ', ko: '벨리즈', at: [18.6, -87.2], side: 'e' },
     HN: { iso3: 'HND', ko: '온두라스', at: [16.4, -84.6], side: 'e' },
@@ -36,6 +36,7 @@
   var ROTATE_MS = 20700;          // 카드 한 장이 머무는 시간
   var CARDS_WIDE = 5;             // 넓은 화면에 동시에 띄우는 카드 수
   var CARDS_NARROW = 2;
+  var MAX_OVERLAP = 0.1;          // 카드끼리 겹쳐도 되는 최대 면적 비율
   var RELOAD_MS = 30 * 60 * 1000; // 데이터 다시 읽는 주기
   var SUN_MS = 60 * 1000;         // 낮·밤 경계 다시 그리는 주기
 
@@ -95,9 +96,11 @@
   // ---------- 지도 ----------
   function initMap() {
     map = L.map('map', {
-      zoomControl: true, attributionControl: false, zoomSnap: 0.25,
+      zoomControl: false, attributionControl: false, zoomSnap: 0.25,
       minZoom: 2, maxZoom: 7
     });
+    // 확대·축소 단추는 카드와 부딪치지 않게 오른쪽 아래에 둔다
+    L.control.zoom({ position: 'bottomright' }).addTo(map);
     map.createPane('night').style.zIndex = 450;   // 나라 경계(400) 위, 배지(600) 아래
     map.getPane('night').style.pointerEvents = 'none';
     fitView();
@@ -310,15 +313,18 @@
     if (!n) { slot.cur = null; slot.rect = null; setVisible(slot, false); return; }
     slot.el.classList.add('leaving');
     setTimeout(function () {
-      // 다른 카드와 10% 이상 겹치면 다음 기사로 바꿔 최대 5번 다시 놓아 본다
-      for (var tries = 0; tries < 5; tries++) {
+      // 다른 카드와 10% 이상 겹치면 다음 기사로 바꿔 최대 6번 다시 놓아 본다.
+      // 끝내 자리가 없으면 겹쳐 띄우지 않고 이번 차례는 비워 둔다
+      var ok = false;
+      for (var tries = 0; tries < 6; tries++) {
         slot.cur = n;
         renderCard(slot, n);
-        if (placeCard(slot) < 0.1) break;
+        if (placeCard(slot) < MAX_OVERLAP) { ok = true; break; }
         var alt = nextItem(slot);
         if (!alt) break;
         n = alt;
       }
+      if (!ok) { slot.cur = null; slot.rect = null; setVisible(slot, false); return; }
       slot.el.classList.remove('leaving');
       setVisible(slot, true);
     }, 350);
@@ -355,7 +361,7 @@
       .map(function (s) { return pad(s.rect, 8); });
     var fixed = [
       { l: 0, r: 230, t: H - 80, b: H },   // 왼쪽 아래 통계 상자
-      { l: 0, r: 54, t: 0, b: 92 }         // 확대·축소 단추
+      { l: W - 54, r: W, t: H - 92, b: H } // 확대·축소 단추
     ];
     var badges = Object.keys(COUNTRIES).map(function (k2) {
       var b = map.latLngToContainerPoint(COUNTRIES[k2].at);
@@ -389,7 +395,7 @@
       var cardA = 0, score = r.pen || 0;
       cards.forEach(function (o) { cardA += overlapArea(r, o); });
       fixed.forEach(function (o) { score += overlapArea(r, o) * 20; });
-      badges.forEach(function (o) { score += overlapArea(r, o) * 3; });
+      badges.forEach(function (o) { score += overlapArea(r, o) * 15; });
       score += cardA * 50;
       if (score < bestScore) { bestScore = score; best = r; bestCard = cardA; }
     });
@@ -406,7 +412,10 @@
   }
   function placeAll() {
     slots.forEach(function (s) { s.rect = null; });
-    slots.forEach(placeCard);
+    slots.forEach(function (s) {
+      // 화면 크기·확대가 바뀌어 자리가 모자라면 그 카드는 다음 차례까지 숨긴다
+      if (s.cur && placeCard(s) >= MAX_OVERLAP) { s.cur = null; s.rect = null; setVisible(s, false); }
+    });
   }
   function startRotation() {
     var narrow = window.matchMedia('(max-width: 900px)').matches;
