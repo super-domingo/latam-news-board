@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-26T07:56:21+00:00",
+ "updated_at": "2026-10-26T21:49:15+00:00",
  "regulatory": [
   {
    "date": "2026-10-21",
@@ -8,6 +8,14 @@
    "summary_ko": "보건부의 의약품 공공조달 낙찰액이 2,130억 과라니를 넘었으며, 이전 구매 대비 평균 단가를 18% 낮췄다고 밝혔다.",
    "importance": "medium",
    "url": "https://www.lanacion.com.py/pais/2026/10/21/compras-de-salud-superan-g-213000-millones-en-farmacos-y-reducen-costos-en-un-18/"
+  },
+  {
+   "date": "2026-10-19",
+   "agency": "MSPBS",
+   "title_ko": "보건부 예산 추가안 미제출, 병원·백신 재원 우려",
+   "summary_ko": "필리졸라 상원의원이 보건부가 삭감된 병원·백신 재원을 복원할 예산 추가안(adenda)을 아직 PGN 2026에 제출하지 않았다고 지적했다. 외상병원·아코스타 뉴·국립병원 등 주요 병원 재원 축소 우려가 제기됐다.",
+   "importance": "medium",
+   "url": "https://www.ultimahora.com/aun-no-envian-adenda-a-pgn-2026-para-fondos-de-salud"
   },
   {
    "date": "2026-10-08",
