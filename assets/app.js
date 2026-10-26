@@ -209,8 +209,8 @@
     var ctx = nightCanvas.getContext('2d');
     var img = ctx.createImageData(w, h);
     var px = img.data;
-    var NIGHT = 0.48;   // 밤: 짙은 남색을 최대 48%까지 덮는다
-    var DAY = 0.16;     // 낮: 해가 높을수록 따뜻한 햇빛색을 최대 16%까지 더한다
+    var NIGHT = 0.53;   // 밤: 짙은 남색을 최대 53%까지 덮는다
+    var DAY = 0.18;     // 낮: 해가 높을수록 따뜻한 햇빛색을 최대 18%까지 더한다
     for (y = 0; y < h; y++) {
       var la = lats[y] * RAD, a = Math.sin(la) * sinDec, b = Math.cos(la) * cosDec;
       for (x = 0; x < w; x++) {
