@@ -1,6 +1,14 @@
 {
- "updated_at": "2026-10-26T21:49:15+00:00",
+ "updated_at": "2026-10-27T21:48:48+00:00",
  "regulatory": [
+  {
+   "date": "2026-10-27",
+   "agency": "IPS",
+   "title_ko": "하원, IPS 생화학·약사 근무시간 단축 법안 1차 통과",
+   "summary_ko": "하원이 IPS 병원 소속 생화학·약사 약 1,249명의 근무시간 단축 법안을 가결해 상원으로 넘겼다. 이들은 10월 26~28일 파업을 예고한 상태여서 병원 검사·조제 업무 차질이 우려된다.",
+   "importance": "medium",
+   "url": "https://1000noticias.com.py/2026/10/27/diputados-da-media-sancion-a-la-reduccion-horaria-para-bioquimicos-y-farmaceuticos-del-ips"
+  },
   {
    "date": "2026-10-21",
    "agency": "MSPBS",
@@ -16,6 +24,14 @@
    "summary_ko": "필리졸라 상원의원이 보건부가 삭감된 병원·백신 재원을 복원할 예산 추가안(adenda)을 아직 PGN 2026에 제출하지 않았다고 지적했다. 외상병원·아코스타 뉴·국립병원 등 주요 병원 재원 축소 우려가 제기됐다.",
    "importance": "medium",
    "url": "https://www.ultimahora.com/aun-no-envian-adenda-a-pgn-2026-para-fondos-de-salud"
+  },
+  {
+   "date": "2026-10-14",
+   "agency": "IPS",
+   "title_ko": "IPS 약사·생화학자, 임금 인상·정규직화 요구",
+   "summary_ko": "IPS 소속 약사와 생화학자들이 급여 조정과 비정규직 해소를 요구하며 파업을 예고했다. 병원 검사·조제 서비스에 영향이 예상된다.",
+   "importance": "low",
+   "url": "https://www.hoy.com.py/nacionales/2026/10/14/farmaceuticos-y-bioquimicos-del-ips-reclaman-reajuste-salarial-y-desprecarizacion"
   },
   {
    "date": "2026-10-08",
