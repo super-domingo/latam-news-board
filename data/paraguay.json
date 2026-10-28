@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-27T21:48:48+00:00",
+ "updated_at": "2026-10-28T21:48:58+00:00",
  "regulatory": [
   {
    "date": "2026-10-27",
@@ -8,6 +8,14 @@
    "summary_ko": "하원이 IPS 병원 소속 생화학·약사 약 1,249명의 근무시간 단축 법안을 가결해 상원으로 넘겼다. 이들은 10월 26~28일 파업을 예고한 상태여서 병원 검사·조제 업무 차질이 우려된다.",
    "importance": "medium",
    "url": "https://1000noticias.com.py/2026/10/27/diputados-da-media-sancion-a-la-reduccion-horaria-para-bioquimicos-y-farmaceuticos-del-ips"
+  },
+  {
+   "date": "2026-10-27",
+   "agency": "MSPBS",
+   "title_ko": "보건부·IPS, 이타푸아 소아외과 수술 집중 시행",
+   "summary_ko": "보건부와 IPS가 이타푸아 종합병원에서 이틀간 소아외과 수술 집중 프로그램을 시작했다. 전문 수술 대기자 해소가 목적이며 남부 지역 대기 명단을 줄이는 데 초점을 둔다.",
+   "importance": "low",
+   "url": "https://mediosdelestado.gov.py/ip/2026/10/27/ministerio-de-salud-e-ips-inician-maraton-de-cirugias-pediatricas-para-agilizar-atenciones-especializadas-en-itapua/"
   },
   {
    "date": "2026-10-21",
