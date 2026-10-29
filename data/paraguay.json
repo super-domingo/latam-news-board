@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-28T21:48:58+00:00",
+ "updated_at": "2026-10-29T21:49:11+00:00",
  "regulatory": [
   {
    "date": "2026-10-27",
@@ -16,6 +16,22 @@
    "summary_ko": "보건부와 IPS가 이타푸아 종합병원에서 이틀간 소아외과 수술 집중 프로그램을 시작했다. 전문 수술 대기자 해소가 목적이며 남부 지역 대기 명단을 줄이는 데 초점을 둔다.",
    "importance": "low",
    "url": "https://mediosdelestado.gov.py/ip/2026/10/27/ministerio-de-salud-e-ips-inician-maraton-de-cirugias-pediatricas-para-agilizar-atenciones-especializadas-en-itapua/"
+  },
+  {
+   "date": "2026-10-27",
+   "agency": "MSPBS",
+   "title_ko": "보건부·OPS, 국경 보건감시 점검 기술 임무 착수",
+   "summary_ko": "보건부와 범미보건기구(OPS/OMS)가 2주 일정으로 공항·항만·육상 국경 통과지점의 국제보건규칙(RSI) 이행 역량을 점검하는 기술 임무를 시작했다. 파라과이에서 입국지점만을 대상으로 한 첫 기술 평가로 소개됐다.",
+   "importance": "medium",
+   "url": "https://www.paho.org/es/noticias/27-10-2026-paraguay-fortalece-vigilancia-sanitaria-fronteras-con-mision-tecnica-opsoms"
+  },
+  {
+   "date": "2026-10-27",
+   "agency": "DNCP",
+   "title_ko": "파라과이, 제8회 이베로아메리카 공공조달 포럼 개최지로",
+   "summary_ko": "파라과이가 제8회 이베로아메리카 공공조달 포럼(Foro Iberoamericano de Compra Pública)의 개최국으로 선정됐다. 공공조달 당국 간 협력과 조달 제도 논의의 장이 될 전망이다.",
+   "importance": "low",
+   "url": "https://lanacion.com.py/negocios/2026/10/27/paraguay-sera-sede-del-viii-foro-iberoamericano-de-compra-publica/?outputType=amp"
   },
   {
    "date": "2026-10-21",
