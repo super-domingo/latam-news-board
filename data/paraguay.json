@@ -1,6 +1,22 @@
 {
- "updated_at": "2026-10-29T21:49:11+00:00",
+ "updated_at": "2026-10-30T21:49:00+00:00",
  "regulatory": [
+  {
+   "date": "2026-10-30",
+   "agency": "MSPBS",
+   "title_ko": "산파 직무·역량 매뉴얼 18년 만에 개정",
+   "summary_ko": "OPS/OMS는 파라과이가 18년간 쓰던 산파(obstetra) 직무·역량 매뉴얼을 개정했다고 밝혔다. 10월 27일 공개된 새 매뉴얼은 모성 보건 서비스의 조직과 질 관리 강화를 목표로 한다.",
+   "importance": "low",
+   "url": "https://paho.org/es/noticias/30-10-2026-paraguay-actualiza-manual-funciones-perfiles-profesional-obstetra"
+  },
+  {
+   "date": "2026-10-29",
+   "agency": "MSPBS",
+   "title_ko": "보건장관, 의약품 재원 증액·생화학자 요구 검토 약속",
+   "summary_ko": "이사이아스 프레테스 보건장관은 의약품 구입 재원을 늘리고 누적 채무 상환을 추진하겠다고 밝혔다. 재원 사용처는 조달 가능한 재정 여건에 따른다고 단서를 달았다. 급여 인상을 요구하며 파업한 보건부 생화학자들의 요구도 검토하겠다고 했다.",
+   "importance": "medium",
+   "url": "https://latribuna.com.py/nacionales/locales/2026/10/29/salud-promete-ampliar-fondos"
+  },
   {
    "date": "2026-10-27",
    "agency": "IPS",
@@ -80,22 +96,6 @@
    "summary_ko": "DINAVISA가 위생등록 없이 유통되는 미용 시술 제품 SCULPTRA와 POWER COL-TRA에 대해 위생경보를 발령했다.",
    "importance": "medium",
    "url": "https://dinavisa.gov.py/category/alertas/"
-  },
-  {
-   "date": "2026-10-01",
-   "agency": "DINAVISA",
-   "title_ko": "첨단치료의약품(ATMP) 위생등록 의무화 (결의 413/2026)",
-   "summary_ko": "첨단치료의약품의 수입·수출·제조·판매·유통 시 DINAVISA 위생등록을 의무화했다. ATMP 등록 요건 규정안은 별도로 의견수렴 중이다. 일부 법령 데이터베이스는 같은 번호를 희귀질환 의약품 절차와 연결하고 있어 원문 확인이 필요하다.",
-   "importance": "high",
-   "url": "https://dinavisa.gov.py/resoluciones/"
-  },
-  {
-   "date": "2026-10-01",
-   "agency": "DINAVISA",
-   "title_ko": "비치료용 니코틴 파우치 DINAVISA 등록 의무화 (결의 412/2026)",
-   "summary_ko": "치료 목적이 아닌 니코틴 파우치 제품의 제조·수입·수출·소분 등을 하려면 DINAVISA에 의무적으로 등록하도록 했다.",
-   "importance": "medium",
-   "url": "https://dinavisa.gov.py/resoluciones/"
   }
  ]
 }

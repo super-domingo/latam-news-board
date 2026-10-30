@@ -1,6 +1,136 @@
 {
- "updated_at": "2026-10-29T21:49:11+00:00",
+ "updated_at": "2026-10-30T21:49:00+00:00",
  "items": [
+  {
+   "country": "PY",
+   "date": "2026-10-30",
+   "category": "정치·사회",
+   "importance": "low",
+   "title_ko": "여당 상원의원, 상원 지도부 교체설에 신중론",
+   "summary_ko": "콜림 소로카 여당 상원의원은 상원 지도부(mesa directiva) 교체설과 관련해 파라과이에 새로운 정치 불안 국면은 필요 없다고 말했다. 그는 올해 안에 콜로라도당 내 자신의 거취를 정하겠다고 밝혔다.",
+   "source": "1000 Noticias",
+   "url": "https://1000noticias.com.py/2026/10/30/no-necesitamos-nuevos-escenarios-de-inestabilidad-politica-afirma-senador/"
+  },
+  {
+   "country": "PY",
+   "date": "2026-10-30",
+   "category": "정세",
+   "importance": "medium",
+   "title_ko": "파라나강 주말 수위 하락 전망, 경보는 유지",
+   "summary_ko": "야시레타댐은 주말 동안 파라나강 수위가 점진적으로 내려갈 것으로 예상했지만 이투사잉고와 아욜라는 여전히 경보 기준을 웃돈다. 아욜라 수위는 약 6m 안팎이며 파라과이 측 비상사태는 내년 1월까지 길어질 수 있다는 전망이 나온다.",
+   "source": "MDZ",
+   "url": "https://www.mdzol.com/sociedad/2026/10/30/rio-parana-podria-bajar-el-fin-de-semana-pero-siguen-las-alertas-1991946.html"
+  },
+  {
+   "country": "PE",
+   "date": "2026-10-30",
+   "category": "보건의료",
+   "importance": "high",
+   "title_ko": "페루 뎅기 8만2천 건, 접종 속도 둔화",
+   "summary_ko": "42주차(10/24 기준) 뎅기 8만2,554건·사망 91명이 집계됐다. 10월 1차 접종 속도가 9월 대비 51.6% 낮아졌다.",
+   "source": "La República",
+   "url": "https://larepublica.pe/sociedad/2026/10/30/dengue-en-peru-un-serotipo-concentra-el-91-de-los-identificados-y-vacunacion-pierde-impulso-en-octubre-2013120"
+  },
+  {
+   "country": "PE",
+   "date": "2026-10-30",
+   "category": "정치·사회",
+   "importance": "low",
+   "title_ko": "페루 야당 의원, 후지모리 엘살바도르 방문 비판",
+   "summary_ko": "루스 루케 상원의원이 10월 30일 후지모리 대통령의 엘살바도르 방문 성과와 비용을 따졌다. 방문에서 부켈레 대통령과 면담했다.",
+   "source": "La República",
+   "url": "https://larepublica.pe/politica/2026/10/30/ruth-luque-critica-viaje-de-fujimori-a-el-salvador-la-inseguridad-no-se-combate-con-fotografias-ni-turismo-presidencial-hnews-1994310"
+  },
+  {
+   "country": "GY",
+   "date": "2026-10-30",
+   "category": "정치·사회",
+   "importance": "low",
+   "title_ko": "찰스 3세 방문 중 국가원수관저 인근 시위",
+   "summary_ko": "찰스 3세 국왕의 가이아나 국빈 방문 중 관저 인근에서 시위대와 경찰이 충돌했다고 10월 30일 보도됐다.",
+   "source": "Kaieteur News",
+   "url": "https://kaieteurnewsonline.com/2026/10/30/police-tussle-with-protesters/"
+  },
+  {
+   "country": "BR",
+   "date": "2026-10-30",
+   "category": "정치·사회",
+   "importance": "medium",
+   "title_ko": "룰라, 중도세력 규합해 장관직을 의회 표와 연계",
+   "summary_ko": "재선된 룰라가 4기 내각 구성에서 장관 지명을 의회 지지와 연계하고 중도 정당(센트랑)과 협상할 계획이다. 2027년 의회에서 야권 비중이 커 정부 운영에 부담이 예상된다.",
+   "source": "O Tempo",
+   "url": "https://www.otempo.com.br/politica/governo/2026/10/30/lula-vai-buscar-centrao-e-condicionara-indicacoes-para-ministerios-a-votos-no-congresso"
+  },
+  {
+   "country": "BR",
+   "date": "2026-10-30",
+   "category": "정치·사회",
+   "importance": "medium",
+   "title_ko": "룰라·상하원 의장, 연말까지 의회 안건 조율",
+   "summary_ko": "룰라가 알콜룸브레 상원의장, 모타 하원의장과 만나 연말 안건을 논의했다. 공공안전 헌법개정안, 주 6일제 폐지 등이 포함되나 통과가 보장된 것은 아니다.",
+   "source": "Transmissão Política",
+   "url": "https://transmissaopolitica.com.br/politica-nacional/2026/10/30/pauta-congresso-fim-2026-lula-alcolumbre-motta/"
+  },
+  {
+   "country": "BR",
+   "date": "2026-10-30",
+   "category": "정세",
+   "importance": "low",
+   "title_ko": "룰라 취임식 2027년 1월 5일 브라질리아서 개최",
+   "summary_ko": "룰라 대통령 취임식이 2027년 1월 5일 브라질리아에서 열린다. 재선이라 별도의 공식 인수인계 절차는 필요하지 않다.",
+   "source": "Brasil de Fato",
+   "url": "https://brasildefato.com.br/2026/10/30/posse-de-lula-sera-em-5-de-janeiro-em-brasilia-no-df-governadora-e-deputados-distritais-assumem-no-dia-6"
+  },
+  {
+   "country": "BO",
+   "date": "2026-10-30",
+   "category": "정치·사회",
+   "importance": "medium",
+   "title_ko": "볼리비아 교사노조 대화 결렬, 48시간 파업 예고",
+   "summary_ko": "도시 교사노조가 기술교육원의 주정부 이관(분권화)에 반발해 정부와의 대화를 깨고 11월 9~10일 48시간 파업을 예고했다. 행진과 단식 투쟁도 계획했다.",
+   "source": "Opinión (Bolivia)",
+   "url": "https://www.opinion.com.bo/pais/magisterio-rompe-dialogo-anuncia-paro-48-horas-descentralizacion/20261030160657998450.html"
+  },
+  {
+   "country": "BO",
+   "date": "2026-10-30",
+   "category": "정세",
+   "importance": "low",
+   "title_ko": "파스 대통령, 이베로아메리카 정상회의 참석차 스페인행",
+   "summary_ko": "로드리고 파스 대통령이 스페인에서 열리는 제30차 이베로아메리카 정상회의 참석을 확정했다고 10월 30일 보도됐다.",
+   "source": "Los Tiempos",
+   "url": "https://www.lostiempos.com/actualidad/pais/20261030/paz-confirma-viaje-espana-participar-xxx-cumbre-iberoamericana"
+  },
+  {
+   "country": "AR",
+   "date": "2026-10-30",
+   "category": "보건의료",
+   "importance": "medium",
+   "title_ko": "아르헨티나 상원, 정신보건법 개정안 통과",
+   "summary_ko": "상원이 국가 정신보건법 개혁안을 42대 21로 수정 통과시켜 하원으로 넘겼다. 비자발 입원 기준, 중독 범위 확대, 국가-주 재정지원 장치가 담겼다.",
+   "source": "Parlamentario",
+   "url": "https://www.parlamentario.com/2026/10/30/el-senado-dio-media-sancion-a-la-reforma-de-la-ley-de-salud-mental/"
+  },
+  {
+   "country": "AR",
+   "date": "2026-10-30",
+   "category": "정세",
+   "importance": "medium",
+   "title_ko": "상원, 중견기업 투자유인제도(RIIR) 통과",
+   "summary_ko": "상원이 RIGI의 중견기업판인 RIIR을 통과시켜 하원으로 넘겼다. 불리치 상원의장이 투자 유치 기회를 강조했다.",
+   "source": "La Nación",
+   "url": "https://www.lanacion.com.ar/politica/javier-milei-y-sus-medidas-en-vivo-bullrich-celebro-la-aprobacion-del-riir-en-el-senado-nid30102026/"
+  },
+  {
+   "country": "AR",
+   "date": "2026-10-30",
+   "category": "정치·사회",
+   "importance": "low",
+   "title_ko": "밀레이, 이베로아메리카 정상회의 위해 스페인행",
+   "summary_ko": "밀레이 대통령이 이베로아메리카 정상회의 참석차 스페인을 다시 방문한다. 취임 후 48번째 해외 출장이다.",
+   "source": "La Nación",
+   "url": "https://www.lanacion.com.ar/politica/milei-vuelve-a-viajar-a-espana-para-la-cumbre-iberoamericana-en-su-salida-48-del-pais-desde-que-nid30102026/"
+  },
   {
    "country": "VE",
    "date": "2026-10-29",
@@ -12,6 +142,126 @@
    "url": "https://www.infobae.com/america/agencias/2026/10/29/delcy-rodriguez-garantiza-ejercicio-de-la-politica-y-prohibe-arrestos-sin-orden-judicial/"
   },
   {
+   "country": "VE",
+   "date": "2026-10-29",
+   "category": "정세",
+   "importance": "medium",
+   "title_ko": "델시 로드리게스, 국유자산 반환·선거 공약",
+   "summary_ko": "로드리게스 대통령은 일부 비핵심 국유자산을 옛 소유주에게 반환하겠다고 밝히고, 쇄신된 선관위와 국제 참관 아래 깨끗한 선거를 약속했다. 선거일은 제시하지 않았다.",
+   "source": "CNN en Español",
+   "url": "https://cnnespanol.cnn.com/2026/10/29/venezuela/delcy-rodriguez-maria-corina-machado-discursos-venezuela-orix"
+  },
+  {
+   "country": "VE",
+   "date": "2026-10-29",
+   "category": "보건의료",
+   "importance": "medium",
+   "title_ko": "베네수엘라 40주차 보고서, 폐렴 36.7% 증가",
+   "summary_ko": "보건부 역학 주보(40주차)에 따르면 폐렴이 36.68% 늘었고 급성호흡기감염 23.2%, 급성설사 25.5%도 증가했다. 인플루엔자 441건이 확인됐고 황열은 엄격 감시 중이다.",
+   "source": "El Diario",
+   "url": "https://eldiario.com/2026/10/29/aumento-neumonia-venezuela"
+  },
+  {
+   "country": "UY",
+   "date": "2026-10-29",
+   "category": "정치·사회",
+   "importance": "low",
+   "title_ko": "오르시 \"지역 내 전직 대통령 수감 안 된 예외\"",
+   "summary_ko": "오르시 대통령이 우루과이의 정치적 공존을 강조하고 언론의 민주주의 역할을 옹호했다. 취재진을 비하하는 표현은 거부했다.",
+   "source": "Infobae",
+   "url": "https://www.infobae.com/america/america-latina/2026/10/29/orsi-rechazo-definir-a-periodistas-como-ensobrados-y-defendio-la-convivencia-de-uruguay/"
+  },
+  {
+   "country": "UY",
+   "date": "2026-10-29",
+   "category": "정치·사회",
+   "importance": "low",
+   "title_ko": "Factum, 오르시 지지 26% 정체·반대 52%",
+   "summary_ko": "Factum 조사에서 오르시 대통령 지지율은 26%로 변화가 없었고 반대는 55%에서 52%로 소폭 낮아졌다.",
+   "source": "Gente d'Italia",
+   "url": "https://www.genteditalia.org/2026/10/29/solo-26-aprueba-la-gestion-de-orsi-y-52-desaprueba-segun-factum/"
+  },
+  {
+   "country": "SV",
+   "date": "2026-10-29",
+   "category": "정세",
+   "importance": "medium",
+   "title_ko": "부켈레, 아이티 파병 2천여 명 규모 구출 작전 천명",
+   "summary_ko": "부켈레 대통령은 아이티에서 실종된 항공기술자 4명을 찾기 위한 작전이 점령이 아니라고 밝히며, 무사 귀환하지 않으면 무력을 쓰겠다고 경고했다. 외교부는 2천 명 이상이 파견됐다고 밝혔다.",
+   "source": "Infobae El Salvador",
+   "url": "https://www.infobae.com/el-salvador/2026/10/29/nayib-bukele-no-tenemos-ningun-interes-ni-en-venir-a-dominar-al-pueblo-haitiano-ni-en-poner-las-manos-sobre-las-riquezas-de-haiti/"
+  },
+  {
+   "country": "SV",
+   "date": "2026-10-29",
+   "category": "보건의료",
+   "importance": "medium",
+   "title_ko": "엘살바도르, 2026년 첫 치쿤구니야 확진 40주 만에 보고",
+   "summary_ko": "엘살바도르 보건부는 역학주 41주차에 올해 첫 치쿤구니야 확진 사례를 확인했다고 밝혔다. 40주 동안 보고가 없었으며 뎅기열도 올해 4번째 사망자가 나와 매개체 감염병 감시가 이어지고 있다.",
+   "source": "Infobae El Salvador",
+   "url": "https://www.infobae.com/el-salvador/2026/10/29/el-salvador-confirma-su-primer-caso-de-chikungunya-de-2026-tras-40-semanas-sin-registros/"
+  },
+  {
+   "country": "SR",
+   "date": "2026-10-29",
+   "category": "정세",
+   "importance": "low",
+   "title_ko": "미국, 수리남 안보협력에 300만달러 추가",
+   "summary_ko": "미국 대사관 임시대리대사와 수리남 법무안보부 장관이 카리브해 안보구상(CBSI) 개정 합의에 서명했다. 추가 자금은 경찰 장비, 훈련, 초국가 조직범죄 대응 기관 강화에 쓰인다.",
+   "source": "Dagblad De West",
+   "url": "https://dagbladdewest.com/2026/10/29/vs-stellen-extra-usd-3-miljoen-beschikbaar-voor-surinaamse-veiligheidsdiensten/"
+  },
+  {
+   "country": "SR",
+   "date": "2026-10-29",
+   "category": "정치·사회",
+   "importance": "low",
+   "title_ko": "마투에라, 메노나이트 배후 조직도 단속해야",
+   "summary_ko": "야당 의원 마투에라가 메노나이트 63명 추방과 관련해 입국을 주선한 단체들도 처벌해야 한다고 주장했다. 정부 부처의 협약 체결 의혹과 대통령 발언 불일치를 지적했다.",
+   "source": "Waterkant",
+   "url": "https://www.waterkant.net/suriname/2026/10/29/mathoera-regering-moet-organisaties-achter-mennonieten-ook-aanpakken/"
+  },
+  {
+   "country": "PE",
+   "date": "2026-10-29",
+   "category": "보건의료",
+   "importance": "medium",
+   "title_ko": "엘니뇨 우려 속 페루 뎅기 경보, 누적 8.3만 건",
+   "summary_ko": "엘니뇨 영향 가능성에 따라 뎅기 경보가 나왔고 누적 약 8만3천 건 중 라리베르타드주가 1만6천 건을 차지한다. 보건 당국이 대응을 강화하고 있다.",
+   "source": "Infobae",
+   "url": "https://www.infobae.com/peru/2026/10/29/alerta-por-dengue-ante-posible-impacto-del-fenomeno-el-nino-peru-acumula-83-mil-casos-y-la-libertad-concentra-16-mil/"
+  },
+  {
+   "country": "PA",
+   "date": "2026-10-29",
+   "category": "정세",
+   "importance": "medium",
+   "title_ko": "파나마 2027년 예산 2차 심의 통과",
+   "summary_ko": "파나마 국회가 10월 29일 351억 1,170만 발보아 규모의 2027년 일반예산안을 2차 심의에서 통과시켰다. 공공조달 관련 조항(370조) 수정이 포함돼 야당과 마찰이 있었고 30~31일 3차 심의가 예정돼 있다.",
+   "source": "Telemetro",
+   "url": "https://www.telemetro.com/nacionales/presupuesto-2027-panama-asamblea-aprueba-b351117-millones-segundo-debate-n6097018"
+  },
+  {
+   "country": "PA",
+   "date": "2026-10-29",
+   "category": "보건의료",
+   "importance": "low",
+   "title_ko": "파나마 보건부, 자궁경부암 조기검진 장비 기증받아",
+   "summary_ko": "보건부(Minsa)가 한국 대사가 참석한 가운데 자궁경부암 사전진단 장비를 기증받았다. 조기 발견 역량 강화가 목적이다.",
+   "source": "TVN Panamá",
+   "url": "https://www.tvn-2.com/nacionales/salud/minsa-recibe-equipos-deteccion-cancer-cervicouterino_1_2268665.html"
+  },
+  {
+   "country": "MX",
+   "date": "2026-10-29",
+   "category": "정세",
+   "importance": "low",
+   "title_ko": "열대폭풍 반스, 바하칼리포르니아수르·시날로아 연안 이동",
+   "summary_ko": "열대폭풍 반스가 태평양 연안을 따라 바하칼리포르니아수르와 시날로아 인근을 지나며 호우 경보가 이어지고 있다. 같은 날 오악사카·치아파스 등에서 규모 4.0~4.3 지진도 관측됐다.",
+   "source": "Infobae México",
+   "url": "https://www.infobae.com/mexico/2026/10/29/en-vivo-clima-cdmx-y-resto-de-mexico-hoy-jueves-29-de-octubre/"
+  },
+  {
    "country": "HN",
    "date": "2026-10-29",
    "category": "보건의료",
@@ -20,6 +270,86 @@
    "summary_ko": "온두라스 의사협회(CMH)와 보건부는 임시직 의사 337건 중 182건을 검토해 체불임금 지급이 40% 진행됐다고 밝혔다. 물가지수 연동(IPC)과 격년 수당 등은 아직 협의 중이다. 49일간의 집회로 중단됐던 진료가 재개된 뒤에도 재파업 위험이 남아 있다.",
    "source": "Infobae",
    "url": "https://www.infobae.com/honduras/2026/10/29/cmh-y-salud-reportan-un-avance-del-40-en-el-pago-de-salarios-atrasados-a-medicos-en-honduras/"
+  },
+  {
+   "country": "HN",
+   "date": "2026-10-29",
+   "category": "정세",
+   "importance": "low",
+   "title_ko": "아스푸라 대통령, 마드리드 이베로아메리카 정상회의 참석",
+   "summary_ko": "온두라스 외교부는 아스푸라 대통령이 11월 4~5일 마드리드 정상회의에 참석한다고 확인했다. 2028년 제31차 정상회의가 온두라스에서 열리며 외교장관이 사무국 임시 의장직을 맡는다.",
+   "source": "Infobae Honduras",
+   "url": "https://www.infobae.com/honduras/2026/10/29/nasry-asfura-asistira-a-la-cumbre-iberoamericana-en-madrid-y-honduras-sera-sede-en-2028/"
+  },
+  {
+   "country": "HN",
+   "date": "2026-10-29",
+   "category": "보건의료",
+   "importance": "medium",
+   "title_ko": "온두라스 뎅기열 누적 12,281건, 수도 사망 의심 조사",
+   "summary_ko": "온두라스 뎅기열 누적 환자가 12,281건으로 주 300~350건씩 늘고 있으며 수도에서 58세 여성의 사망 가능성을 조사 중이다. 중환자실 입원 환자는 보고되지 않았다.",
+   "source": "Hondudiario",
+   "url": "https://www.hondudiario.com/2026/10/29/dengue-acumula-12281-casos-y-salud-investiga-posible-fallecimiento-en-la-capital/"
+  },
+  {
+   "country": "HN",
+   "date": "2026-10-29",
+   "category": "보건의료",
+   "importance": "medium",
+   "title_ko": "온두라스 보건부, 병원 의약품 확보에 6억 렘피라 투입",
+   "summary_ko": "온두라스 보건부가 병원의 의약품 부족 해소를 위해 2027년 구매용으로 약 6억 렘피라를 책정했다. 일부 주요 병원의 의약품 공급률은 약 80% 수준이며 보건부는 입찰·배분 절차를 진행 중이다.",
+   "source": "TuNota",
+   "url": "https://www.tunota.com/honduras-hoy/salud-apuesta-l600-millones-para-acabar-con-el-no-hay-en-hospitales-2026-10-29"
+  },
+  {
+   "country": "GY",
+   "date": "2026-10-29",
+   "category": "정치·사회",
+   "importance": "medium",
+   "title_ko": "가이아나 야당 대표 아즈루딘 모하메드 체포",
+   "summary_ko": "야당 대표 아즈루딘 모하메드가 경찰관에게 감시 영상 대가로 뇌물을 제안한 혐의로 구금됐다. 누이도 별건으로 체포됐으며 아직 기소는 되지 않았다.",
+   "source": "Kaieteur News",
+   "url": "https://kaieteurnewsonline.com/2026/10/29/opposition-leader-sister-arrested-in-separate-police-investigations"
+  },
+  {
+   "country": "GY",
+   "date": "2026-10-29",
+   "category": "정세",
+   "importance": "low",
+   "title_ko": "가이아나, 유엔 쿠바 금수 해제 표결 기권",
+   "summary_ko": "유엔총회의 대쿠바 금수 해제 결의 표결에서 가이아나가 기권했다. 현지 매체는 이를 외교적 후퇴로 평가했다.",
+   "source": "Kaieteur News",
+   "url": "https://kaieteurnewsonline.com/2026/10/29/uk-supports-cuba-as-guyana-backs-down"
+  },
+  {
+   "country": "GT",
+   "date": "2026-10-29",
+   "category": "정세",
+   "importance": "medium",
+   "title_ko": "과테말라, 미국 무역합의 이행 위해 법 20건 개정 필요",
+   "summary_ko": "1월 30일 체결된 미국과의 합의는 145개 조치를 담고 있어 과테말라가 법률 20건을 개정하고 규범 5건을 신설해야 한다. 일부 농산물은 최대 10% 관세가 남아 약 2만9천 개 일자리가 위험하다는 지적이다.",
+   "source": "Infobae Guatemala",
+   "url": "https://www.infobae.com/guatemala/2026/10/29/guatemala-debera-reformar-20-leyes-y-crear-cinco-normas-para-cumplir-el-acuerdo-con-estados-unidos/"
+  },
+  {
+   "country": "GT",
+   "date": "2026-10-29",
+   "category": "보건의료",
+   "importance": "medium",
+   "title_ko": "보건부, 4개 병원 항암제 공급 확보 43백만 케찰 투입",
+   "summary_ko": "과테말라 보건부(MSPAS)가 로세벨트·산후안데디오스 등 4개 병원의 항암제 공급을 보장하며 43백만 케찰 이상을 투입한다고 밝혔다. 의약품 조달·예산 동향으로 공급 참여 기회를 살펴볼 만하다.",
+   "source": "Diario de Centro América",
+   "url": "https://dca.gob.gt/noticias-guatemala-diario-centro-america/mspas-garantiza-disponibilidad-de-medicamentos-para-cancer-en-cuatro-hospitales-con-ahorro-de-q18-2-millones/"
+  },
+  {
+   "country": "CR",
+   "date": "2026-10-29",
+   "category": "정치·사회",
+   "importance": "low",
+   "title_ko": "코스타리카 의회, 헌법재판관 아라야 연임",
+   "summary_ko": "코스타리카 입법의회가 헌법재판소(Sala Constitucional) 재판관 호르헤 아라야를 2034년 10월까지 8년 재선출했다. 여당 의원 29명이 반대표를 던졌으나 연임 저지에 필요한 38표에는 미치지 못했다.",
+   "source": "Infobae",
+   "url": "https://www.infobae.com/costa-rica/2026/10/29/magistrado-jorge-araya-garcia-es-reelegido-por-ocho-anos-mas-en-costa-rica-pese-al-rechazo-de-29-diputados-oficialistas/"
   },
   {
    "country": "CO",
@@ -50,6 +380,16 @@
    "summary_ko": "Anvisa가 리라글루티드와 세마글루티드 기반 펜 5종(당뇨 3종, 비만 2종)을 등록했다. 올해 승인된 GLP-1 펜은 총 20종이 되었다. 제네릭·유사제품 등록이 빠르게 늘고 있다.",
    "source": "TMC",
    "url": "https://tmc.com.br/brasil/anvisa-registra-cinco-canetas-glp1-diabetes-obesidade/"
+  },
+  {
+   "country": "BR",
+   "date": "2026-10-29",
+   "category": "보건의료",
+   "importance": "high",
+   "title_ko": "Anvisa, 전자처방 SNCR 전환기간 2027년 3월로 연장",
+   "summary_ko": "Anvisa 이사회가 제20차 정례 공개회의에서 통제의약품 전자처방(SNCR) 전환기간을 2027년 3월 3일까지 연장했다. 농약 간이 독성평가 규정 RDC 184/2017도 폐지했다.",
+   "source": "Anvisa (gov.br)",
+   "url": "https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2026/20a-reuniao-ordinaria-publica-da-anvisa-periodo-de-transicao-para-emissao-de-receitas-eletronicas-no-sncr-e-prorrogado"
   },
   {
    "country": "BO",
@@ -150,6 +490,16 @@
    "summary_ko": "오르시 대통령이 연례 가구조사에서 6세 미만 아동 가구의 식량불안이 18.9%에서 14.8%로 줄었다고 밝혔다.",
    "source": "El Observador",
    "url": "https://www.elobservador.com.uy/nacional/una-las-noticias-que-mas-nos-alegra-comunicar-orsi-destaco-la-caida-la-inseguridad-alimentaria-menores-seis-anos-n6061830"
+  },
+  {
+   "country": "UY",
+   "date": "2026-10-28",
+   "category": "보건의료",
+   "importance": "medium",
+   "title_ko": "우루과이 매독 6,635건, 보건부 우선과제 지정",
+   "summary_ko": "보건부가 10월 17일 기준 매독 6,635건을 보고했다. 루스템베르그 장관이 우선 과제로 규정하고 신속검사 기반 능동 탐지를 제안했다.",
+   "source": "Revista CERO",
+   "url": "https://www.revistacero.com.uy/uruguay-registra-6635-casos-de-sifilis-segun-datos-del-msp/"
   },
   {
    "country": "SV",
@@ -262,6 +612,16 @@
    "url": "https://www.infobae.com/nicaragua/2026/10/28/incautan-19-toneladas-de-marihuana-y-arresta-a-un-guatemalteco-en-frontera-de-nicaragua/"
   },
   {
+   "country": "NI",
+   "date": "2026-10-28",
+   "category": "정치·사회",
+   "importance": "low",
+   "title_ko": "니카라과 연안 코카인 150포대 압수",
+   "summary_ko": "니카라과 군은 10월 28일 친안데가 연안 로스소로스 해변에서 총격전 끝에 코카인 추정 물질 150포대를 압수했다고 29일 발표했다. 용의자 3명과 교전했고 물류 지원 혐의로 여성 1명이 체포됐다.",
+   "source": "Infobae",
+   "url": "https://www.infobae.com/nicaragua/2026/10/29/incautan-150-paquetes-de-presunta-cocaina-tras-tiroteo-en-la-costa-de-nicaragua/"
+  },
+  {
    "country": "MX",
    "date": "2026-10-28",
    "category": "정세",
@@ -332,6 +692,16 @@
    "url": "https://www.infobae.com/america/agencias/2026/10/28/guatemala-cierra-la-temporada-de-lluvias-de-2026-con-23-muertos-y-mas-de-224000-afectados/"
   },
   {
+   "country": "GT",
+   "date": "2026-10-28",
+   "category": "정치·사회",
+   "importance": "low",
+   "title_ko": "과테말라 무장 공격으로 4명 사망·5명 부상",
+   "summary_ko": "10월 28일 과테말라시티, 산호세피눌라, 엘타하르 등에서 잇따른 무장 공격으로 4명이 숨지고 5명이 다쳤다. 사망자 중 1명은 미성년자였다.",
+   "source": "Infobae Guatemala",
+   "url": "https://www.infobae.com/guatemala/2026/10/29/una-jornada-violenta-en-guatemala-cuatro-muertos-y-cinco-heridos-en-ataques-armados/"
+  },
+  {
    "country": "EC",
    "date": "2026-10-28",
    "category": "보건의료",
@@ -380,6 +750,16 @@
    "summary_ko": "CCSS는 1~9월 85,046명이 수술을 받았으며 평균 대기가 2023년 4월 535일에서 2026년 9월 449일로 줄었다고 밝혔다. 같은 시기 아동병원은 ICU 포화로 수술을 일부 중단했다.",
    "source": "Infobae",
    "url": "https://www.infobae.com/costa-rica/2026/10/28/costa-rica-reduce-en-86-dias-la-espera-para-cirugias-y-reporta-mas-de-85000-pacientes-operados-durante-2026/"
+  },
+  {
+   "country": "CR",
+   "date": "2026-10-28",
+   "category": "정치·사회",
+   "importance": "medium",
+   "title_ko": "여당, 대통령 연임 허용 개헌안 발의",
+   "summary_ko": "여당 PPSO가 대통령 연속 재선을 허용하는 개헌안을 10월 28일 발의했다. 통과에는 57석 중 38표가 필요하나 여당은 31석뿐이라 야당 협조가 관건이다.",
+   "source": "Infobae",
+   "url": "https://www.infobae.com/america/agencias/2026/10/28/el-oficialismo-presenta-un-proyecto-que-busca-la-reeleccion-presidencial-consecutiva-en-costa-rica/"
   },
   {
    "country": "CO",
@@ -712,6 +1092,16 @@
    "url": "https://www.infobae.com/nicaragua/2026/10/27/parlamento-centroamericano-eligio-nueva-junta-directiva-sin-representantes-de-nicaragua-tras-el-anuncio-de-retiro-de-managua/"
   },
   {
+   "country": "NI",
+   "date": "2026-10-27",
+   "category": "정세",
+   "importance": "low",
+   "title_ko": "니카라과, 미국 내 영사 2명 해임 후 공석",
+   "summary_ko": "독립매체 보도에 따르면 오르테가-무리요 정부는 10월 27일 마이애미와 필라델피아 영사를 후임 없이 해임했다. 이로 인해 약 80만 명의 재외 니카라과인이 영사 서비스 공백에 놓였다는 지적이다.",
+   "source": "Infobae",
+   "url": "https://www.infobae.com/nicaragua/2026/10/30/nicaragua-destituye-a-dos-consules-en-estados-unidos-sin-reemplazarlos-800-mil-personas-en-el-limbo-consular-dice-investigacion/"
+  },
+  {
    "country": "HN",
    "date": "2026-10-27",
    "category": "보건의료",
@@ -732,6 +1122,36 @@
    "url": "https://lahora.gt/nacionales/hloarca/2026/10/27/igss-otorgara-bono-unico-de-q-1-mil-a-jubilados-por-celebracion-de-su-80-aniversario"
   },
   {
+   "country": "EC",
+   "date": "2026-10-27",
+   "category": "정세",
+   "importance": "medium",
+   "title_ko": "노보아, 엘니뇨 대응 양수기 1,778대 배치",
+   "summary_ko": "노보아 대통령이 10월 27일 해안 침수 지역에 양수기 1,778대를 지급한다고 발표했다. 엘니뇨 영향 강우로 약 760건의 사고와 사망 4명이 보고됐다.",
+   "source": "El Diario (Ecuador)",
+   "url": "https://www.eldiario.ec/ecuador/inundaciones-en-ecuador-conozca-donde-se-entregaran-las-1778-motobombas-anunciadas-por-noboa-27102026"
+  },
+  {
+   "country": "EC",
+   "date": "2026-10-27",
+   "category": "정세",
+   "importance": "medium",
+   "title_ko": "COE, 과야킬 병원 접근 인프라 점검 결의",
+   "summary_ko": "국가 COE가 10월 27일 회의에서 5개 결의를 채택했다. 병원·보건소 접근에 영향을 줄 과야킬 핵심 인프라 취약점을 점검하는 기술위원회가 포함된다.",
+   "source": "Primicias",
+   "url": "https://www.primicias.ec/sociedad/lluvias-ecuador-guayaquil-alerta-coe-resoluciones-fenomeno-elnino-27octubre-135831/"
+  },
+  {
+   "country": "EC",
+   "date": "2026-10-27",
+   "category": "보건의료",
+   "importance": "medium",
+   "title_ko": "에콰도르 공공병원 예산 삭감, 의약품 부족 지속",
+   "summary_ko": "보건부의 2026년 공공병원 예산이 팬데믹 이후 최저 수준으로 줄었다는 보도다. 환자와 의료진이 기본 의약품·소모품 부족을 호소하고 있어 공공조달 환경에 유의가 필요하다.",
+   "source": "Prensa Latina",
+   "url": "https://www.prensa-latina.cu/2026/10/27/hospitales-publicos-de-ecuador-afrontan-recortes-presupuestarios/"
+  },
+  {
    "country": "CR",
    "date": "2026-10-27",
    "category": "보건의료",
@@ -740,6 +1160,16 @@
    "summary_ko": "소아 호흡기감염 상담과 입원이 늘자 보건부가 감시와 예방 조치를 강화했다. CCSS, 국립아동병원, 교육부와 공조하며 5세 미만에 특히 주의하라고 당부했다.",
    "source": "Infobae",
    "url": "https://www.infobae.com/costa-rica/2026/10/27/aumentan-hospitalizaciones-de-ninos-por-infecciones-respiratorias-en-costa-rica-y-salud-pide-reforzar-medidas-de-prevencion/"
+  },
+  {
+   "country": "CR",
+   "date": "2026-10-27",
+   "category": "보건의료",
+   "importance": "low",
+   "title_ko": "코스타리카 만 10세 파상풍·디프테리아 접종률 73%",
+   "summary_ko": "보건부 1~9월 자료에 따르면 10세 아동의 Td 백신 접종률은 73.5%로 국가 접종 지표 중 가장 낮다. 22개 지표 중 목표치 95%를 달성한 것은 6개뿐이다.",
+   "source": "Monumental",
+   "url": "https://www.monumental.co.cr/2026/10/27/vacunacion-contra-el-tetanos-y-la-difteria-en-ninos-de-10-anos-apenas-supera-el-70-en-costa-rica/"
   },
   {
    "country": "CO",
@@ -840,6 +1270,16 @@
    "summary_ko": "교원노조는 정부의 대화 소집을 거부하고 11월 3일까지 이관안 철회를 요구했다. 10월 29일 지역연맹이 단계적 파업 개시를 논의할 예정이다.",
    "source": "El Diario",
    "url": "https://www.eldiario.net/portal/2026/10/27/magisterio-advierte-con-paro-de-48-horas/"
+  },
+  {
+   "country": "BO",
+   "date": "2026-10-27",
+   "category": "보건의료",
+   "importance": "medium",
+   "title_ko": "수크레 CNS 약국서 유통기한 지난 의약품 적발",
+   "summary_ko": "추키사카 보건청(SEDES)이 국립보건기금(CNS) 약국 두 곳을 점검했다. 이물질 신고 이후 의약품법에 따라 보고서와 내부 의료 감사를 요구했다.",
+   "source": "La Razón",
+   "url": "https://larazon.bo/ciudades/2026/10/27/sucre-hallan-medicinas-vencidas-en-farmacias-de-la-cns/"
   },
   {
    "country": "AR",
@@ -1012,6 +1452,16 @@
    "url": "https://www.elfinanciero.com.mx/cdmx/2026/10/26/paro-nacional-de-transportistas-en-vivo-en-que-carreteras-de-cdmx-y-edomex-hay-bloqueos-reporte-vial-hoy-26-de-octubre/"
   },
   {
+   "country": "MX",
+   "date": "2026-10-26",
+   "category": "보건의료",
+   "importance": "medium",
+   "title_ko": "Cofepris, 티르제파타이드 제품 불법 판매 경고",
+   "summary_ko": "멕시코 보건위험보호위원회(Cofepris)가 판매허가 없이 유통되는 티르제파타이드 함유 제품의 위조·불법 판매에 대해 위험 경보를 냈다. 허가 없는 GLP-1 계열 제품 단속 강화 신호로, 인허가 수요와 규제 동향 확인이 필요하다.",
+   "source": "El Cronista",
+   "url": "https://cronista.com/mexico/actualidad-mx/alerta-de-cofepris-advierten-por-falsificacion-y-comercializacion-ilegal-de-medicamentos-con-tirzepatida"
+  },
+  {
    "country": "HN",
    "date": "2026-10-26",
    "category": "정세",
@@ -1110,6 +1560,16 @@
    "summary_ko": "코스타리카 의료진이 파나마 지진 피해 환자 78명을 진료하고 귀국했다. 지역 재난 대응 협력 사례다.",
    "source": "Infobae",
    "url": "https://www.infobae.com/costa-rica/2026/10/26/medicos-de-costa-rica-regresan-al-pais-tras-atender-a-78-pacientes-afectados-por-terremoto-en-panama/"
+  },
+  {
+   "country": "CL",
+   "date": "2026-10-26",
+   "category": "정치·사회",
+   "importance": "medium",
+   "title_ko": "칠레 법무장관 사퇴 압박, 아동성범죄 감형 논란",
+   "summary_ko": "아동 성범죄 수형자 56명 감형 문제로 카스트 대통령이 책임을 인정했다. 야당은 라바트 법무장관의 사임을 요구했다.",
+   "source": "Cooperativa",
+   "url": "https://cooperativa.cl/noticias/pais/presidente-kast/solari-ante-mea-culpa-de-kast-el-ministro-rabat-debio-dar-un-paso-al/2026-10-26/105842.html"
   },
   {
    "country": "BR",
@@ -1302,6 +1762,16 @@
    "url": "https://www.abc.com.py/nacionales/2026/10/25/bioquimicos-de-guaira-se-suman-a-huelga-nacional-y-anuncian-paro-en-10-servicios-de-salud/"
   },
   {
+   "country": "PE",
+   "date": "2026-10-25",
+   "category": "정치·사회",
+   "importance": "medium",
+   "title_ko": "페루, 리마·카야오 비상사태 60일 연장",
+   "summary_ko": "치안 대응을 위해 리마와 카야오의 비상사태가 10월 28일부터 60일 연장됐다. 경찰이 치안을 맡고 군이 지원하며 이동·집회 자유 등이 제한된다.",
+   "source": "Infobae (agencias)",
+   "url": "https://www.infobae.com/america/agencias/2026/10/25/peru-prorroga-por-60-dias-el-estado-de-emergencia-en-lima-para-enfrentar-la-criminalidad/"
+  },
+  {
    "country": "MX",
    "date": "2026-10-25",
    "category": "정치·사회",
@@ -1382,6 +1852,16 @@
    "url": "https://www.biobiochile.cl/noticias/nacional/chile/2026/10/25/recortes-slep-y-movilizaciones-mundo-educacional-se-suma-a-las-criticas-contra-gobierno-de-kast.shtml"
   },
   {
+   "country": "CL",
+   "date": "2026-10-25",
+   "category": "정치·사회",
+   "importance": "low",
+   "title_ko": "카스트 지지율 29%로 최저, 의회 관계 최악 평가",
+   "summary_ko": "Cadem 조사에서 카스트 지지율이 29%로 처음 30% 아래로 떨어지고 부정 평가는 66%였다. 의회 관계가 가장 낮게 평가됐다.",
+   "source": "BioBioChile",
+   "url": "https://www.biobiochile.cl/noticias/nacional/chile/2026/10/25/cadem-aprobacion-de-kast-baja-del-30-por-primera-vez-y-92-rechaza-rebajas-a-condenados-por-abusos.shtml"
+  },
+  {
    "country": "BR",
    "date": "2026-10-25",
    "category": "정치·사회",
@@ -1390,166 +1870,6 @@
    "summary_ko": "10월 25일 대선 결선투표에서 룰라 대통령이 유효표 51.79%(64,256,232표)를 얻어 48.21%의 플라비우 보우소나루(PL)를 누르고 재선에 성공했다고 고등선거법원(TSE)이 발표했다. 투표율은 약 81%였고, 취임은 2027년 1월 1일이다.",
    "source": "Tribunal Superior Eleitoral (TSE)",
    "url": "https://www.tse.jus.br/comunicacao/noticias/2026/Outubro/presidente-do-tse-anuncia-reeleicao-de-lula-e-faz-balanco-do-2o-turno-das-eleicoes-2026"
-  },
-  {
-   "country": "VE",
-   "date": "2026-10-24",
-   "category": "보건의료",
-   "importance": "low",
-   "title_ko": "세계 소아마비의 날 맞아 아동 예방접종 실시",
-   "summary_ko": "베네수엘라 보건부(MPPS)가 10월 24일 세계 소아마비의 날을 맞아 외래·병원 네트워크에서 아동에게 국가 예방접종 일정에 따른 백신을 접종했다고 밝혔다. 아마소나스·아푸레·타치라·술리아·볼리바르주에도 접종팀을 보냈다. 앞서 올해 백신 부족으로 접종을 제한했다는 보도가 있었다.",
-   "source": "MPPS (베네수엘라 보건부)",
-   "url": "https://mpps.gob.ve/venezuela-reafirmo-su-cerco-epidemiologico-soberano-en-el-dia-mundial-contra-la-poliomielitis/"
-  },
-  {
-   "country": "SV",
-   "date": "2026-10-24",
-   "category": "정세",
-   "importance": "medium",
-   "title_ko": "엘살바도르, 아이티에 병력 증파",
-   "summary_ko": "아이티에서 실종된 군인 4명 수색을 위해 부케레 정부가 450명 병력을 파견했고, 이후 총 약 1,300명 규모 배치가 보도됐다. 의회는 지난달 아이티 파병을 2027년 10월까지 연장했다.",
-   "source": "Infobae",
-   "url": "https://www.infobae.com/el-salvador/2026/10/24/el-gobierno-de-el-salvador-despliega-450-soldados-en-haiti-para-buscar-a-militares-desaparecidos/"
-  },
-  {
-   "country": "SR",
-   "date": "2026-10-24",
-   "category": "보건의료",
-   "importance": "medium",
-   "title_ko": "수리남, 환자별 통합 전자의무기록 도입 추진",
-   "summary_ko": "수리남이 종이 환자기록을 없애고 환자당 하나의 디지털 기록을 구축하려 한다. 보건부 장관 미시에카바가 추진하며 RGD 몽고 진료소가 전자환자기록(EPD)을 처음 도입했다. 보건 디지털화는 의료기기·소프트웨어 시장 기회와 연결될 수 있다.",
-   "source": "Suriname Herald",
-   "url": "https://www.srherald.com/suriname/2026/10/24/suriname-wil-af-van-papieren-patientendossiers-een-digitaal-dossier-voor-iedere-patient/"
-  },
-  {
-   "country": "SR",
-   "date": "2026-10-24",
-   "category": "정세",
-   "importance": "low",
-   "title_ko": "시몬스 대통령, 기업환경 개선 촉구",
-   "summary_ko": "예니퍼 시몬스 대통령이 기업 포럼에서 기업환경 개선을 위한 구체적 실행 의제를 요구했다. 정부는 투자법 현대화와 경제특구 추진을 진행 중이라고 밝혔다.",
-   "source": "Dagblad De West",
-   "url": "https://dagbladdewest.com/2026/10/24/president-pleit-voor-verbetering-ondernemersklimaat/"
-  },
-  {
-   "country": "PE",
-   "date": "2026-10-24",
-   "category": "보건의료",
-   "importance": "high",
-   "title_ko": "뎅기 7만6천 명 넘어…보건부 백신 접종 가속",
-   "summary_ko": "페루의 뎅기 환자가 76,784명으로 늘었다. 라리베르타드(14,452명)와 피우라(1만 3천 명 이상)가 가장 많다. 보건부는 우기와 더위로 환자가 더 늘 것에 대비해 북부 해안 지역 백신 접종을 서두르고 있다.",
-   "source": "Infobae",
-   "url": "https://www.infobae.com/peru/2026/10/24/dengue-en-peru-minsa-acelera-la-vacunacion-contra-el-dengue-ante-el-riesgo-de-mas-casos-por-lluvias-y-calor/"
-  },
-  {
-   "country": "PE",
-   "date": "2026-10-24",
-   "category": "정세",
-   "importance": "low",
-   "title_ko": "페루 대통령 엘살바도르 공식 방문(10/28~31) 준비",
-   "summary_ko": "키코 후지모리 대통령이 10월 28~31일 엘살바도르를 공식 방문하며 외교장관과 법무장관이 동행한다. 보건부 장관 간 양자 회담도 10월 30일 예정된 것으로 보도되었다.",
-   "source": "La República",
-   "url": "https://larepublica.pe/politica/2026/10/24/canciller-y-ministro-de-justicia-viajaran-con-keiko-fujimori-a-el-salvador-del-28-al-31-de-octubre-hnews-2004984"
-  },
-  {
-   "country": "NI",
-   "date": "2026-10-24",
-   "category": "정치·사회",
-   "importance": "low",
-   "title_ko": "관보·법무비서실, 법무장관실 산하로 이관",
-   "summary_ko": "니카라과 국회가 대통령실 법무비서실과 관보 La Gaceta를 법무장관실(Procuraduría General de Justicia)로 넘기는 법(Ley 1285)을 통과시켰다. 야권 성향 언론은 정권의 권력 집중이 강화된 조치로 보고 있다.",
-   "source": "Infobae",
-   "url": "https://www.infobae.com/nicaragua/2026/10/24/la-dictadura-de-ortega-y-murillo-concentra-mas-poder-la-ley-que-entrega-el-diario-oficial-y-la-secretaria-juridica-a-la-procuraduria/"
-  },
-  {
-   "country": "NI",
-   "date": "2026-10-24",
-   "category": "정세",
-   "importance": "low",
-   "title_ko": "10년 만에 공식 빈곤 조사 착수",
-   "summary_ko": "니카라과 통계청(INIDE)과 중앙은행이 '2026 생활수준 측정 조사'를 시작했다. 10년 가까이 끊겼던 공식 빈곤 통계가 다시 나오는 것이다.",
-   "source": "La Prensa (Nicaragua)",
-   "url": "https://www.laprensani.com/2026/10/24/economia/3803266-pobreza-nicaragua-inide-encuesta"
-  },
-  {
-   "country": "NI",
-   "date": "2026-10-24",
-   "category": "정세",
-   "importance": "low",
-   "title_ko": "오르테가·무리요 일가, 국가 요직 장악",
-   "summary_ko": "오르테가-무리요 부부가 자녀 8명을 국가 요직과 국영기업에 앉힌 것으로 보도됐다. 미 재무부는 올해 4월 금광 관련으로 일부 자녀를 제재한 바 있어 권력 집중과 제재 리스크가 이어진다.",
-   "source": "Infobae",
-   "url": "https://www.infobae.com/nicaragua/2026/10/24/ortega-y-murillo-superaron-a-los-somoza-en-nicaragua-ocho-hijos-en-el-poder-y-40-nietos-en-lista-de-espera/"
-  },
-  {
-   "country": "NI",
-   "date": "2026-10-24",
-   "category": "보건의료",
-   "importance": "medium",
-   "title_ko": "니카라과 치쿤구니야 확산, 병원 포화·통계 은폐 의혹",
-   "summary_ko": "독립 매체 Confidencial은 치쿤구니야 등 발열성 질환 증가로 병원이 붐비고 환자들이 자가치료나 민간의료를 택한다고 전했다. 보건부(Minsa)가 환자 등록을 제한한다는 주장도 있으나 정부는 확인하지 않았다.",
-   "source": "Confidencial",
-   "url": "https://confidencial.digital/noticias/prefiero-atenderme-por-mi-cuenta-pacientes-se-quejan-ante-masivos-contagios-de-chikungunya/"
-  },
-  {
-   "country": "MX",
-   "date": "2026-10-24",
-   "category": "정세",
-   "importance": "medium",
-   "title_ko": "트럼프, 미국 선거 앞두고 멕시코에 카르텔 단속 압박",
-   "summary_ko": "트럼프 행정부가 미국 선거를 앞두고 멕시코 정부에 카르텔에 대한 강력한 타격을 요구하며 압박하고 있다고 보도됐다. 관세 협상과 안보 문제가 맞물려 양국 관계의 긴장 요인이 되고 있다.",
-   "source": "Proceso",
-   "url": "https://proceso.com.mx/nacional/2026/10/24/trump-presiona-a-mexico-para-dar-un-golpe-contra-los-carteles-antes-de-las-elecciones-en-eu-382464.html"
-  },
-  {
-   "country": "HN",
-   "date": "2026-10-24",
-   "category": "정세",
-   "importance": "medium",
-   "title_ko": "민간 경제계, IMF와 회의… 6차 검토 승인 기대",
-   "summary_ko": "온두라스 민간 경제계가 국제통화기금(IMF)과의 회의를 마치고, 현행 협약의 6차 검토가 승인되기를 기대한다고 밝혔다. IMF 프로그램은 2026년 12월에 끝난다.",
-   "source": "Infobae",
-   "url": "https://infobae.com/honduras/2026/10/24/honduras-empresa-privada-concluye-reunion-con-el-fmi-y-espera-que-se-apruebe-la-sexta-revision-del-acuerdo"
-  },
-  {
-   "country": "GY",
-   "date": "2026-10-24",
-   "category": "보건의료",
-   "importance": "medium",
-   "title_ko": "가이아나, 전자담배 규제 추진에 보건당국 지지",
-   "summary_ko": "가이아나 보건 당국이 청소년 보호를 위한 알리 대통령의 전자담배 제한 방침을 지지했다. 보건부는 청소년 대상 약물 사용 대응 전략도 마련 중이다.",
-   "source": "Guyana Chronicle",
-   "url": "https://guyanachronicle.com/2026/10/24/health-officials-back-president-alis-restriction-on-vaping-to-protect-young-people"
-  },
-  {
-   "country": "EC",
-   "date": "2026-10-24",
-   "category": "보건의료",
-   "importance": "medium",
-   "title_ko": "Arcsa, 키토서 위생신고 없는 제품 874점 압수",
-   "summary_ko": "위생규제청 Arcsa가 키토 도심 라마린 지역 단속에서 위생신고(NSO) 없이 팔리던 화장품 등 874점을 압수했다. Arcsa는 신고 없는 제품은 품질·안전·효능이 검증되지 않았다고 경고했다. 같은 주에 페루산 밀수 곡물 약 100톤 창고도 폐쇄하는 등 단속을 강화하고 있다.",
-   "source": "El Universo",
-   "url": "https://www.eluniverso.com/comunidad/quito/quito-operativo-control-notificacion-registro-sanitario-articulos-esotericos-arcsa-nota/"
-  },
-  {
-   "country": "CR",
-   "date": "2026-10-24",
-   "category": "보건의료",
-   "importance": "medium",
-   "title_ko": "매독 2,954건, 작년보다 19% 늘어",
-   "summary_ko": "2026년 40주차까지 코스타리카의 매독 환자는 2,954건으로 작년 같은 기간보다 약 19% 늘었다. 임질 신고도 약 12% 증가했다. 사회보장공단(CCSS) 자료를 바탕으로 한 집계다.",
-   "source": "Infobae",
-   "url": "https://www.infobae.com/costa-rica/2026/10/24/costa-rica-registra-2954-casos-de-sifilis-y-un-alza-del-12-en-pacientes-con-gonorrea/"
-  },
-  {
-   "country": "BZ",
-   "date": "2026-10-24",
-   "category": "정세",
-   "importance": "low",
-   "title_ko": "총리 \"마야열차 연결로 멕시코·과테말라와 연계 가능\"",
-   "summary_ko": "브리세뇨 총리가 멕시코 마야열차(Tren Maya)를 벨리즈까지 연장하는 방안을 계속 검토하고 있다고 밝혔다. 미주개발은행(IDB)이 이를 위한 타당성 연구를 진행하고 있다.",
-   "source": "Breaking Belize News",
-   "url": "https://www.breakingbelizenews.com/2026/10/24/pm-briceno-says-tren-maya-link-could-connect-belize-with-mexico-and-guatemala/"
   }
  ]
 }
