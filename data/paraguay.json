@@ -1,6 +1,14 @@
 {
- "updated_at": "2026-11-01T21:49:41+00:00",
+ "updated_at": "2026-11-02T21:49:47+00:00",
  "regulatory": [
+  {
+   "date": "2026-11-02",
+   "agency": "MSPBS",
+   "title_ko": "보건부, 제17회 전국 역학 박람회 11월 25~27일 개최",
+   "summary_ko": "보건부 보건감시총국(DGVS)이 제17회 전국 역학 박람회(Muestra Nacional de Epidemiología)를 11월 25일부터 27일까지 아순시온에서 연다고 공지했다.",
+   "importance": "low",
+   "url": "https://dgvs.mspbs.gov.py/muestra-nacional-de-epidemiologia-prepara-su-decimo-septima-edicion/"
+  },
   {
    "date": "2026-10-30",
    "agency": "MSPBS",
