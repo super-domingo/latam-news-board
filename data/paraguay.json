@@ -1,6 +1,14 @@
 {
- "updated_at": "2026-11-02T21:49:47+00:00",
+ "updated_at": "2026-11-03T21:48:31+00:00",
  "regulatory": [
+  {
+   "date": "2026-11-03",
+   "agency": "MSPBS",
+   "title_ko": "보건부·OPS, 국경 보건감시 점검 임무 1차 결과 발표",
+   "summary_ko": "보건부와 OPS/OMS가 10월 27일 시작한 국제보건규칙(RSI) 이행 점검 기술 임무의 주요 예비 결과를 아순시온에서 발표했다. 공항·항만·육상 국경 통과지점의 역량을 점검한 임무다.",
+   "importance": "medium",
+   "url": "https://www.paho.org/es/noticias/3-11-2026-presentan-primeros-hallazgos-mision-tecnica-para-fortalecer-aplicacion-rsi"
+  },
   {
    "date": "2026-11-02",
    "agency": "MSPBS",
@@ -112,14 +120,6 @@
    "summary_ko": "이사이아스 프레테스 보건장관과 오스카르 로베라 경제장관이 2026년 재정 마감과 2027년 예산을 논의했다. 2027년 2월 예정된 경제부 채권 발행 자금으로 공급업체 체납금을 상환할 계획이다.",
    "importance": "medium",
    "url": "https://www.lanacion.com.py/politica/2026/10/06/salud-apunta-a-saldar-deudas-y-mejorar-las-condiciones-de-compra-de-medicamentos/"
-  },
-  {
-   "date": "2026-10-05",
-   "agency": "DINAVISA",
-   "title_ko": "미등록 미용 제품 SCULPTRA·POWER COL-TRA 위생경보",
-   "summary_ko": "DINAVISA가 위생등록 없이 유통되는 미용 시술 제품 SCULPTRA와 POWER COL-TRA에 대해 위생경보를 발령했다.",
-   "importance": "medium",
-   "url": "https://dinavisa.gov.py/category/alertas/"
   }
  ]
 }
