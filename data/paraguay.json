@@ -1,6 +1,14 @@
 {
- "updated_at": "2026-11-03T21:48:31+00:00",
+ "updated_at": "2026-11-04T21:48:37+00:00",
  "regulatory": [
+  {
+   "date": "2026-11-04",
+   "agency": "IPS",
+   "title_ko": "IPS 이사회, 수술 지침 품질·서비스 입찰 문제 제기",
+   "summary_ko": "11월 4일 IPS 이사회 정례회의에서 수술 진료지침의 품질 문제와 서비스 입찰 건이 지적됐고 여러 예산안은 보류됐다. 회의에서는 공공조달 안건이 다수 검토됐다.",
+   "importance": "medium",
+   "url": "https://ultimahora.com/en-sesion-del-ips-cuestionan-guias-de-mala-calidad-para-cirugias-y-licitaciones-de-servicios"
+  },
   {
    "date": "2026-11-03",
    "agency": "MSPBS",
@@ -16,6 +24,14 @@
    "summary_ko": "보건부 보건감시총국(DGVS)이 제17회 전국 역학 박람회(Muestra Nacional de Epidemiología)를 11월 25일부터 27일까지 아순시온에서 연다고 공지했다.",
    "importance": "low",
    "url": "https://dgvs.mspbs.gov.py/muestra-nacional-de-epidemiologia-prepara-su-decimo-septima-edicion/"
+  },
+  {
+   "date": "2026-11-02",
+   "agency": "MSPBS",
+   "title_ko": "보건부, 전염병 퇴치 가속 국가행동계획 검증",
+   "summary_ko": "보건부가 11월 2일 전염병 및 관련 질환 퇴치를 가속·지속하기 위한 국가행동계획의 검증 워크숍을 열었다. OPS/OMS가 소식을 전했으며 세부 내용은 확인되지 않았다.",
+   "importance": "low",
+   "url": "https://www.paho.org/es/noticias/2-11-2026-paraguay-valida-plan-accion-para-acelerar-sostener-eliminacion-enfermedades"
   },
   {
    "date": "2026-10-30",
@@ -112,14 +128,6 @@
    "summary_ko": "IPS 이사회가 정례회의 074/2026에서 의약품·의료 소모품 조달 안건을 다뤘다. 질병·출산 프로그램 채무 이행을 위한 이타우 은행 차입도 승인했다.",
    "importance": "medium",
    "url": "https://prensamercosur.org/2026/10/12/consejo-del-ips-avanza-en-soluciones-para-medicamentos-insumos-y-servicios-de-salud/"
-  },
-  {
-   "date": "2026-10-06",
-   "agency": "MSPBS",
-   "title_ko": "보건부·경제부, 공급업체 체납 해소와 의약품 구매조건 개선 논의",
-   "summary_ko": "이사이아스 프레테스 보건장관과 오스카르 로베라 경제장관이 2026년 재정 마감과 2027년 예산을 논의했다. 2027년 2월 예정된 경제부 채권 발행 자금으로 공급업체 체납금을 상환할 계획이다.",
-   "importance": "medium",
-   "url": "https://www.lanacion.com.py/politica/2026/10/06/salud-apunta-a-saldar-deudas-y-mejorar-las-condiciones-de-compra-de-medicamentos/"
   }
  ]
 }
