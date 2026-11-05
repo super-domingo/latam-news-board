@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-04T21:48:37+00:00",
+ "updated_at": "2026-11-05T21:49:25+00:00",
  "regulatory": [
   {
    "date": "2026-11-04",
@@ -8,6 +8,14 @@
    "summary_ko": "11월 4일 IPS 이사회 정례회의에서 수술 진료지침의 품질 문제와 서비스 입찰 건이 지적됐고 여러 예산안은 보류됐다. 회의에서는 공공조달 안건이 다수 검토됐다.",
    "importance": "medium",
    "url": "https://ultimahora.com/en-sesion-del-ips-cuestionan-guias-de-mala-calidad-para-cirugias-y-licitaciones-de-servicios"
+  },
+  {
+   "date": "2026-11-04",
+   "agency": "IPS",
+   "title_ko": "IPS, 우에노은행 연금수급자 타 은행으로 재배정",
+   "summary_ko": "IPS 재무관리자는 중앙은행의 우에노은행 정리 절차 이후 연금수급자를 다른 은행으로 재배정한다고 밝혔다. 우에노은행에는 IPS 자금 약 3억 8,000만 달러가 있었던 것으로 보도됐고, 수급자는 Mi IPS 포털에서 배정 은행을 조회할 수 있다.",
+   "importance": "medium",
+   "url": "https://abc.com.py/economia/2026/11/04/ips-reasignara-a-jubilados-a-otros-bancos-tras-caso-ueno-asi-podran-consultar-donde-cobrar"
   },
   {
    "date": "2026-11-03",
