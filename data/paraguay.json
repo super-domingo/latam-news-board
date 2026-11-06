@@ -1,6 +1,14 @@
 {
- "updated_at": "2026-11-05T21:49:25+00:00",
+ "updated_at": "2026-11-06T21:48:16+00:00",
  "regulatory": [
+  {
+   "date": "2026-11-06",
+   "agency": "MSPBS",
+   "title_ko": "보건부, 국가약물요법위원회 2차 교육 워크숍 개최",
+   "summary_ko": "보건부가 OPS/OMS 기술 지원으로 국가약물요법위원회(Comité Nacional de Farmacoterapia) 위원 60여 명을 대상으로 두 번째 교육 워크숍을 열었다. 필수 의약품·소모품의 합리적 선정과 공평하고 안전하며 적시의 접근을 높이는 것이 목적이다.",
+   "importance": "medium",
+   "url": "https://www.paho.org/es/noticias/6-11-2026-segundo-taller-capacitacion-para-integrantes-comite-nacional-farmacoterapia"
+  },
   {
    "date": "2026-11-04",
    "agency": "IPS",
@@ -128,14 +136,6 @@
    "summary_ko": "IPS 소속 약사와 생화학자들이 급여 조정과 비정규직 해소를 요구하며 파업을 예고했다. 병원 검사·조제 서비스에 영향이 예상된다.",
    "importance": "low",
    "url": "https://www.hoy.com.py/nacionales/2026/10/14/farmaceuticos-y-bioquimicos-del-ips-reclaman-reajuste-salarial-y-desprecarizacion"
-  },
-  {
-   "date": "2026-10-08",
-   "agency": "IPS",
-   "title_ko": "IPS 이사회, 의약품·소모품 조달 대책 승인",
-   "summary_ko": "IPS 이사회가 정례회의 074/2026에서 의약품·의료 소모품 조달 안건을 다뤘다. 질병·출산 프로그램 채무 이행을 위한 이타우 은행 차입도 승인했다.",
-   "importance": "medium",
-   "url": "https://prensamercosur.org/2026/10/12/consejo-del-ips-avanza-en-soluciones-para-medicamentos-insumos-y-servicios-de-salud/"
   }
  ]
 }
