@@ -1,6 +1,14 @@
 {
- "updated_at": "2026-11-09T21:48:52+00:00",
+ "updated_at": "2026-11-10T21:48:48+00:00",
  "regulatory": [
+  {
+   "date": "2026-11-10",
+   "agency": "MSPBS",
+   "title_ko": "보건장관, 전 대통령 친족 업체 대금 지급 감사·행정 개편 예고",
+   "summary_ko": "1000 Noticias에 따르면 이사이아스 프레테스 보건장관이 페냐 전 대통령의 친족과 연관된 공급업체에 대한 입찰 절차와 대금 지급을 감사하겠다고 밝혔다. 장관은 보건부 행정 분야 개편도 예고했다. 단일 매체 보도라 다른 출처로 확인이 필요하다.",
+   "importance": "medium",
+   "url": "https://1000noticias.com.py/2026/11/10/ministro-de-salud-anuncio-auditoria-tras-pagos-millonarios-a-familiar-de-expresidente/"
+  },
   {
    "date": "2026-11-06",
    "agency": "MSPBS",
