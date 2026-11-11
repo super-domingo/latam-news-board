@@ -1,6 +1,14 @@
 {
- "updated_at": "2026-11-10T21:48:48+00:00",
+ "updated_at": "2026-11-11T21:48:50+00:00",
  "regulatory": [
+  {
+   "date": "2026-11-11",
+   "agency": "MSPBS",
+   "title_ko": "이분척추 환자 가족, 도뇨관 부족 항의 시위 예고",
+   "summary_ko": "ABC 콜로르에 따르면 이분척추(spina bifida) 환자 가족들이 공공병원의 도뇨관(sonda) 부족에 항의해 보건부 앞에서 시위를 벌일 예정이다. 공공 의료소모품 공급난을 보여 주는 사례로 보도됐다.",
+   "importance": "medium",
+   "url": "https://www.abc.com.py/nacionales/2026/11/11/crisis-en-salud-publica-protesta-por-falta-de-sondas-para-espina-bifida/"
+  },
   {
    "date": "2026-11-10",
    "agency": "MSPBS",
@@ -8,6 +16,22 @@
    "summary_ko": "1000 Noticias에 따르면 이사이아스 프레테스 보건장관이 페냐 전 대통령의 친족과 연관된 공급업체에 대한 입찰 절차와 대금 지급을 감사하겠다고 밝혔다. 장관은 보건부 행정 분야 개편도 예고했다. 단일 매체 보도라 다른 출처로 확인이 필요하다.",
    "importance": "medium",
    "url": "https://1000noticias.com.py/2026/11/10/ministro-de-salud-anuncio-auditoria-tras-pagos-millonarios-a-familiar-de-expresidente/"
+  },
+  {
+   "date": "2026-11-10",
+   "agency": "MSPBS",
+   "title_ko": "보건장관 \"새 바람\"…과거 입찰·대금 지급 감사 예고",
+   "summary_ko": "ABC 콜로르에 따르면 이사이아스 프레테스 보건장관은 보건부에 '새 바람, 새 변화'가 있을 것이라며 과거 입찰과 업체 대금 지급을 감사하겠다고 밝혔다. 홍수 피해를 입은 필라르 지역 방문도 계획했다. 1000 Noticias 보도와 같은 내용이어서 두 매체에서 확인된다.",
+   "importance": "medium",
+   "url": "https://www.abc.com.py/nacionales/2026/11/10/isaias-fretes-asegura-que-hay-nuevos-vientos-en-salud-publica/"
+  },
+  {
+   "date": "2026-11-10",
+   "agency": "DINAVISA",
+   "title_ko": "보건부·DINAVISA, PANAFTOSA와 인수공통감염병·원헬스 협의",
+   "summary_ko": "OPS/OMS에 따르면 보건부와 DINAVISA 관계자들이 범미구제역센터(PANAFTOSA)와 인수공통감염병 예방, 식품안전 강화, 국가 원헬스 의제를 논의했다. 산드라 바레이로 DINAVISA 청장 직무대행이 참석자로 명시됐다.",
+   "importance": "low",
+   "url": "https://www.paho.org/es/noticias/10-11-2026-paraguay-promueve-acciones-para-prevenir-enfermedades-zoonoticas-fortalecer"
   },
   {
    "date": "2026-11-06",
