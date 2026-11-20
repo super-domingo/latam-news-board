@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-19T21:48:44+00:00",
+ "updated_at": "2026-11-20T21:48:16+00:00",
  "regulatory": [
   {
    "date": "2026-11-18",
@@ -8,6 +8,14 @@
    "summary_ko": "IPS 데를리스 레온 이사장이 3주간 의약품 공급 계약 300건 이상을 체결했지만 특히 항암제를 중심으로 부족이 계속된다고 인정했다. 유방암 치료제 레트로졸의 다음 입고분은 2주치에 그친다. 본문은 열람하지 못하고 검색 요약만 확인했다.",
    "importance": "medium",
    "url": "https://www.abc.com.py/nacionales/2026/11/18/ips-firmo-300-contratos-de-medicamentos-pero-el-faltante-persiste/"
+  },
+  {
+   "date": "2026-11-18",
+   "agency": "MSPBS",
+   "title_ko": "시우다드델에스테, IPS·보건부 의약품 불법 판매 적발",
+   "summary_ko": "시우다드델에스테 병원에서 여성 2명이 보건부(MSPBS)와 IPS 표시가 있는 의약품을 가입자에게 판매하려다 적발돼 의약품이 압수됐다. 압수품에는 마취·진정제 미다졸람이 포함됐고 사건은 검찰에 통보됐다. 의약품 유통 관리 허점을 보여주는 사례로, 본문은 열람하지 못하고 검색 요약만 확인했다.",
+   "importance": "low",
+   "url": "https://www.abc.com.py/este/2026/11/18/incautan-medicamentos-del-ips-y-del-ministerio-de-salud-que-dos-mujeres-ofrecian-a-asegurados/"
   },
   {
    "date": "2026-11-12",
