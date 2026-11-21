@@ -1,6 +1,14 @@
 {
- "updated_at": "2026-11-20T21:48:16+00:00",
+ "updated_at": "2026-11-21T21:48:54+00:00",
  "regulatory": [
+  {
+   "date": "2026-11-20",
+   "agency": "DINAVISA",
+   "title_ko": "DINAVISA, WHO 국제 인증 평가 절차 착수",
+   "summary_ko": "DINAVISA가 WHO의 국제 평가 절차를 시작했다. 파라과이의 의약품·백신 규제 통제 체계가 국제 품질·안전 기준에서 어느 수준인지 평가하는 것이 목적이며, 통과 시 의약품 규제기관 신뢰도 향상이 기대된다. 본문은 열람하지 못하고 검색 요약만 확인했다.",
+   "importance": "medium",
+   "url": "https://www.lanacion.com.py/pais/2026/11/20/mas-seguridad-en-medicamentos-dinavisa-inicia-proceso-de-certificacion-internacional-con-la-oms/"
+  },
   {
    "date": "2026-11-18",
    "agency": "IPS",
@@ -16,6 +24,14 @@
    "summary_ko": "시우다드델에스테 병원에서 여성 2명이 보건부(MSPBS)와 IPS 표시가 있는 의약품을 가입자에게 판매하려다 적발돼 의약품이 압수됐다. 압수품에는 마취·진정제 미다졸람이 포함됐고 사건은 검찰에 통보됐다. 의약품 유통 관리 허점을 보여주는 사례로, 본문은 열람하지 못하고 검색 요약만 확인했다.",
    "importance": "low",
    "url": "https://www.abc.com.py/este/2026/11/18/incautan-medicamentos-del-ips-y-del-ministerio-de-salud-que-dos-mujeres-ofrecian-a-asegurados/"
+  },
+  {
+   "date": "2026-11-15",
+   "agency": "DINAVISA",
+   "title_ko": "DINAVISA, 온라인 의약품·체중감량제 구매 위험 경고",
+   "summary_ko": "DINAVISA가 소셜미디어와 인터넷에서 보건 등록 없이 판매되는 의약품, 체중감량 제품, 주사제를 구매하는 위험을 경고했다. 불법 유통 단속과 소비자 보호를 강조한 공지로, 본문은 열람하지 못하고 검색 요약만 확인했다.",
+   "importance": "low",
+   "url": "https://ahoraparaguay.com/2026/11/15/dinavisa-advierte-sobre-los-peligros-de-comprar-medicamentos-y-productos-para-adelgazar-en-redes-sociales/"
   },
   {
    "date": "2026-11-12",
