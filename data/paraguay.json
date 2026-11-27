@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-26T21:47:56+00:00",
+ "updated_at": "2026-11-27T21:48:51+00:00",
  "regulatory": [
   {
    "date": "2026-11-20",
@@ -128,30 +128,6 @@
    "summary_ko": "OPS/OMS는 파라과이가 18년간 쓰던 산파(obstetra) 직무·역량 매뉴얼을 개정했다고 밝혔다. 10월 27일 공개된 새 매뉴얼은 모성 보건 서비스의 조직과 질 관리 강화를 목표로 한다.",
    "importance": "low",
    "url": "https://paho.org/es/noticias/30-10-2026-paraguay-actualiza-manual-funciones-perfiles-profesional-obstetra"
-  },
-  {
-   "date": "2026-10-29",
-   "agency": "MSPBS",
-   "title_ko": "보건장관, 의약품 재원 증액·생화학자 요구 검토 약속",
-   "summary_ko": "이사이아스 프레테스 보건장관은 의약품 구입 재원을 늘리고 누적 채무 상환을 추진하겠다고 밝혔다. 재원 사용처는 조달 가능한 재정 여건에 따른다고 단서를 달았다. 급여 인상을 요구하며 파업한 보건부 생화학자들의 요구도 검토하겠다고 했다.",
-   "importance": "medium",
-   "url": "https://latribuna.com.py/nacionales/locales/2026/10/29/salud-promete-ampliar-fondos"
-  },
-  {
-   "date": "2026-10-29",
-   "agency": "DINAVISA",
-   "title_ko": "DINAVISA, 의약품 단체 SAFYBI와 기술협력 협약",
-   "summary_ko": "DINAVISA는 SAFYBI와 전문 인력 교육과 지식 교류를 위한 기술협력 기본협약을 체결했다. 협약은 호르헤 일리우 DINAVISA 청장이 서명했다.",
-   "importance": "low",
-   "url": "https://pharmabiz.net/safybi-y-dinavisa-firmaron-un-convenio"
-  },
-  {
-   "date": "2026-10-29",
-   "agency": "MSPBS",
-   "title_ko": "보건부, 만성절 앞두고 묘지 뎅기 방역 작전 가동",
-   "summary_ko": "보건부는 만성절·위령의 날 인파에 대비해 전국 묘지에서 모기 서식지 제거, 화학 방제, 보건교육을 포함한 뎅기 등 아르보바이러스 예방 작전을 진행하고 있다. 작전은 10월 20일부터 전국에서 시행 중이다.",
-   "importance": "low",
-   "url": "https://www.lanacion.com.py/pais/2026/10/29/salud-activa-operativo-en-cementerios-contra-el-dengue-por-dia-de-los-difuntos/"
   }
  ]
 }
